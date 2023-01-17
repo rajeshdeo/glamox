@@ -1,7 +1,11 @@
 import React from 'react'
+import Sample from './Components/Sample'
 
 export const Display = () => {
   return (
-    <div>Display</div>
+    <div>
+      <Sample/>
+    </div>
+    
   )
 }
