@@ -4,7 +4,9 @@ import Sample from './Components/Sample'
 export const Display = () => {
   return (
     <div>
-      <Sample/>
+      {/* Navbar */}
+      {/* mainroutes */}
+      {/* Footer */}
     </div>
     
   )
