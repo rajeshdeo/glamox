@@ -1,0 +1,24 @@
+
+
+.s_prod{
+    
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1rem;
+}
+
+.s_prod img{
+    width: 100%;
+    height: auto;
+}
+
+button{
+    width: 100%;
+    height: 3rem;
+    border: 0;
+    background-color: #fc2779;
+    color: aliceblue;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: inter;
+    
+}

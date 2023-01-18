@@ -1,0 +1,23 @@
+.container {
+    width: 80%;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    padding: 3rem;
+    
+
+}
+
+.products_div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    
+}
+
+.sidebar{
+    width: 70%;
+    border: 1px solid teal;
+    margin-right: 2rem;
+
+}
