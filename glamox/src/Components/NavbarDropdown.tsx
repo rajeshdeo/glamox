@@ -20,48 +20,22 @@ import {
   Tr,
   Td,
   Th,
+  Text,
+  Heading,
 } from "@chakra-ui/react";
 
 export const NavbarDropdown = () => {
-  // const dropdownMakupData = [
-  //   ["Face Primer", "Kajal", "Lipstick", "Face Brush", "Kay Beauty", "Combos@"],
-  //   [
-  //     "Concealer",
-  //     "Eyeliner",
-  //     "Liquid Lipstick",
-  //     "Eye Brush",
-  //     "Huda Beauty",
-  //     "Nykaa",
-  //   ],
-  //   [
-  //     "Foundation",
-  //     "Mascara",
-  //     "Lip Crayon",
-  //     "Lip Brush",
-  //     "Charlotte Tilbury",
-  //     "New Launches",
-  //   ],
-  // ];
-
-  
 
   const dropdownData = [
     [
-      [
-        'Face',
-        'Eyes',
-        'Lips',
-        'Tools/Brushes',
-        'Top Brands',
-        'Quick Links',
-      ],
+      ["Face", "Eyes", "Lips", "Tools/Brushes", "Top Brands", "Quick Links"],
       [
         "Face Primer",
         "Kajal",
         "Lipstick",
         "Face Brush",
         "Kay Beauty",
-        "Combos@",
+        "Nail Polish",
       ],
       [
         "Concealer",
@@ -69,7 +43,7 @@ export const NavbarDropdown = () => {
         "Liquid Lipstick",
         "Eye Brush",
         "Huda Beauty",
-        "Nykaa",
+        "Nail Art Kits",
       ],
       [
         "Foundation",
@@ -77,8 +51,24 @@ export const NavbarDropdown = () => {
         "Lip Crayon",
         "Lip Brush",
         "Charlotte Tilbury",
-        "New Launches",
+        "Nail Care",
       ],
+      [
+        'Compact',
+        'Eye Shadow',
+        'Lip Gloss',
+        'Brush Sets',
+        'M.A.C',
+        'Remover',
+      ],
+      [
+        'Contour',
+       ' Eye Brow',
+        'Lip Liner',
+        'Brush Cleaners',
+        'Maybelline New',
+        'Nail Primer',
+      ]
     ],
     [
       [
@@ -108,30 +98,30 @@ export const NavbarDropdown = () => {
     ],
     [
       [
-        'Hair Care',
-        'Accessories',
-        'Concern',
-        'Trending',
-        'Top Brands',
-        'Quick Links'
+        "Hair Care",
+        "Accessories",
+        "Concern",
+        "Trending",
+        "Top Brands",
+        "Quick Links",
       ],
       [
-        'Shampoo',
-        'Hair Brushes',
-       ' Hairfall',
-        'Hair Growth',
-        'Nykaa Naturals',
-        'Combos @',
+        "Shampoo",
+        "Hair Brushes",
+        " Hairfall",
+        "Hair Growth",
+        "Nykaa Naturals",
+        "Combos @",
       ],
       [
-        'Dry Shampoo',
-        'Hair Combs',
-        'Thinning',
-        'Dandruff',
+        "Dry Shampoo",
+        "Hair Combs",
+        "Thinning",
+        "Dandruff",
         "L'Oreal Paris",
-        'Nykaa'
-      ]
-    ]
+        "Nykaa",
+      ],
+    ],
   ];
 
   const categories = [
@@ -146,26 +136,21 @@ export const NavbarDropdown = () => {
     /**
      * You may move the Popover outside Flex.
      */
-    <Flex justifyContent="center" mt={4}>
-      <Popover placement="bottom" isLazy trigger="hover">
+    // <Flex justifyContent="center" mt={4}>
+      <Popover placement={"auto"} isLazy trigger="hover">
         <PopoverTrigger>
-          <Button
-            // rightIcon={<ChevronDownIcon />}
-            colorScheme="green"
-            w="fit-content"
-          >
+          <Button _hover={{color:'pink.400',cursor:'pointer'}} size={'sm'}>
             Categories
           </Button>
         </PopoverTrigger>
         <PopoverContent
           _focus={{ boxShadown: "none" }}
-          w={"90vw"}
+          w={"90vw"} 
+          margin={'0 5%'}
           boxShadow={"xl"}
           border={"none"}
         >
-          {/* <PopoverArrow /> */}
-          {/* <PopoverCloseButton /> */}
-          {/* <PopoverHeader fontWeight="bold">Quick Actions</PopoverHeader> */}
+    
           <PopoverBody w="full">
             <Tabs isLazy colorScheme="green">
               <TabList>
@@ -186,14 +171,22 @@ export const NavbarDropdown = () => {
               <TabPanels>
                 {dropdownData.map((a, k) => (
                   <TabPanel key={k}>
-                    <TableContainer border={'1px'}>
-                      <Table variant='unstyled'>                     
-                        <Tbody border={'1px'}>                          
+                    <TableContainer border={"0px"}>
+                      <Table variant="unstyled">
+                        <Tbody border={"0px"}>
                           {a.map((type, i) => {
                             return (
-                              <Tr key={i} border={'1px'}>
+                              <Tr key={i} border={"0px"}>
                                 {type.map((data, j) => (
-                                  <Td border={'1px'} key={j} fontWeight={i===0?'bold':'normal'}>{data}</Td>
+                                  <Td
+                                    fontSize={{md:'smaller',lg:'md'}}
+                                    p={"0 0 1% 0"}
+                                    border={"0px"}
+                                    key={j}
+                                    fontWeight={i === 0 ? "bold" : "normal"}
+                                  >
+                                    {data}
+                                  </Td>
                                 ))}
                               </Tr>
                             );
@@ -203,63 +196,12 @@ export const NavbarDropdown = () => {
                     </TableContainer>
                   </TabPanel>
                 ))}
-
-                {/* <TabPanel>
-                  <TableContainer>
-                    <Table variant="unstyled" colorScheme="teal">
-                      <Tbody>
-                        <Tr>
-                          <Th>Face</Th>
-                          <Th>Eyes</Th>
-                          <Th>Lips</Th>
-                          <Th>Tools & Brushes</Th>
-                          <Th>Top Brands</Th>
-                          <Th>Quick Links</Th>
-                        </Tr>
-                        {dropdownMakupData.map((type, i) => {
-                          return (
-                            <Tr key={i}>
-                              {type.map((data, j) => (
-                                <Td key={j}>{data}</Td>
-                              ))}
-                            </Tr>
-                          );
-                        })}
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-                  {/* You can add your content here. */}
-                {/* </TabPanel>
-                <TabPanel>
-                  <TableContainer>
-                    <Table variant="unstyled" colorScheme="teal">
-                      <Tbody>
-                        <Tr>
-                          <Th>Moisturizers</Th>
-                          <Th>Cleansers</Th>
-                          <Th>Masks</Th>
-                          <Th>Toners</Th>
-                          <Th>Body Care</Th>
-                          <Th>Shop by Concern</Th>
-                        </Tr>
-                        {dropdownMakupData.map((type, i) => {
-                          return (
-                            <Tr key={i}>
-                              {type.map((data, j) => (
-                                <Td key={j}>{data}</Td>
-                              ))}
-                            </Tr>
-                          );
-                        })}
-                      </Tbody>
-                    </Table>
-                  </TableContainer>
-                </TabPanel> */} */
+                
               </TabPanels>
             </Tabs>
           </PopoverBody>
         </PopoverContent>
       </Popover>
-    </Flex>
+    // </Flex>
   );
 };

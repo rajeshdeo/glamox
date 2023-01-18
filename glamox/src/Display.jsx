@@ -6,7 +6,7 @@ export const Display = () => {
   return (
     <div>
       <Navbar/>
-      <NavbarDropdown/>
+     
     </div>
   )
 }
