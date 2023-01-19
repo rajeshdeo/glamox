@@ -19,6 +19,8 @@ import {
   InputLeftElement,
   HStack,
   Image,
+  Center,
+  Heading,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -67,14 +69,27 @@ export default function Navbar() {
           >
             <Image
               w={"50%"}
+              border={"0px"}
               src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
             />
           </Text>
 
           {/* <NavbarDropdown /> */}
-          <Flex display={{ base: "none", md: "flex" }} >
+          <Flex display={{ base: "none", md: "flex" }} align={"center"} mr={5} justifyContent={'space-evenly'} gap={'1'}>
             {/* <DesktopNav /> */}
-            <NavbarDropdown/>
+            <NavbarDropdown />
+            <Heading
+              _hover={{ color: "pink.400", cursor: "pointer" }}
+              size={"sm"}
+            >
+              Brand
+            </Heading>
+            <Heading
+              _hover={{ color: "pink.400", cursor: "pointer" }}
+              size={"sm"}
+            >
+              Fashion
+            </Heading>
           </Flex>
         </Flex>
 

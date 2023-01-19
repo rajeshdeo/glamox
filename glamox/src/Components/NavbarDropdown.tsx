@@ -180,11 +180,12 @@ export const NavbarDropdown = () => {
                                 {type.map((data, j) => (
                                   <Td
                                     fontSize={{md:'smaller',lg:'md'}}
-                                    p={"0 0 1% 0"}
+                                    p={"0 0 1% 1%"}
                                     border={"0px"}
                                     key={j}
                                     fontWeight={i === 0 ? "bold" : "normal"}
-                                    _hover={{'fontWeight':'bold'}}
+                                    bg={j%2==1?'gray.100':"none"}
+                                    _hover={{'fontWeight':'bold','color':'pink.400'}}
                                   >
                                     {data}
                                   </Td>
