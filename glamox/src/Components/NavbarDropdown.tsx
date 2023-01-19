@@ -139,9 +139,9 @@ export const NavbarDropdown = () => {
     // <Flex justifyContent="center" mt={4}>
       <Popover placement={"auto"} isLazy trigger="hover">
         <PopoverTrigger>
-          <Button _hover={{color:'pink.400',cursor:'pointer'}} size={'sm'}>
+          <Heading _hover={{color:'pink.400',cursor:'pointer'}} size={'sm'}>
             Categories
-          </Button>
+          </Heading>
         </PopoverTrigger>
         <PopoverContent
           _focus={{ boxShadown: "none" }}
@@ -184,6 +184,7 @@ export const NavbarDropdown = () => {
                                     border={"0px"}
                                     key={j}
                                     fontWeight={i === 0 ? "bold" : "normal"}
+                                    _hover={{'fontWeight':'bold'}}
                                   >
                                     {data}
                                   </Td>

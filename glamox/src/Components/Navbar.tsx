@@ -65,10 +65,14 @@ export default function Navbar() {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-           <Image w={'50%'} src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"/>
+            <Image
+              w={"50%"}
+              src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
+            />
           </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          {/* <NavbarDropdown /> */}
+          <Flex display={{ base: "none", md: "flex" }} >
             {/* <DesktopNav /> */}
             <NavbarDropdown/>
           </Flex>
