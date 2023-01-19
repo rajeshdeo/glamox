@@ -31,6 +31,9 @@ import {
 } from "@chakra-ui/icons";
 import { NavbarDropdown } from "./NavbarDropdown";
 
+import { useRef } from "react";
+import { CartDrawer } from "./CartDrawer";
+
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -47,6 +50,7 @@ export default function Navbar() {
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
+        {/* -----------------------------------Hambrgur menu------------------------------- */}
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
@@ -61,21 +65,25 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            <Image
-              w={"50%"}
-              border={"0px"}
-              src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
-            />
-          </Text>
 
-          {/* <NavbarDropdown /> */}
-          <Flex display={{ base: "none", md: "flex" }} align={"center"} mr={5} justifyContent={'space-evenly'} gap={'1'}>
+        {/* ---------------------------------Logo & all (Flex-start)----------------------------------------- */}
+        <Flex flex={{ base: 1 }} justify={{ base: "center", md:"flex-start" }} gap={'3'}>
+          <Image
+            w={"7rem"}
+            border={"0px"}
+            src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
+          />
+        {/* </Flex> */}
+          {/*-----------------------------Categories------------------------------------------- */}
+          <HStack
+            display={{ base: "none", md: "flex" }}
+            align={"center"}           
+            m={'auto'}
+            justifyContent={"space-between"}
+            gap={"1"}
+            border={"0px"}
+            width={'60%'}
+          >
             {/* <DesktopNav /> */}
             <NavbarDropdown />
             <Heading
@@ -90,19 +98,28 @@ export default function Navbar() {
             >
               Fashion
             </Heading>
-          </Flex>
+            {/* <Heading
+              _hover={{ color: "pink.400", cursor: "pointer" }}
+              size={"sm"}
+            >
+              Beauty
+            </Heading> */}
+          </HStack>
         </Flex>
 
+        {/*-------------------- Login/Signup and all (Flex-end)----------------------- */}
         <HStack
           border={"0px"}
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
-          spacing={4}
+          spacing={2}
+          w={'50%'}
         >
           <InputGroup
             border={"0px"}
-            width="12rem"
+            width={{ md:'9rem',lg:'15rem'}}
             display={{ base: "none", md: "inline-flex" }}
+            size={'sm'}
           >
             <InputLeftElement
               pointerEvents="none"
@@ -111,16 +128,19 @@ export default function Navbar() {
             <Input placeholder="Search" width="100%" />
           </InputGroup>
 
-          <Button colorScheme="pink" as={"a"} variant={"solid"} href={"#"}>
+          <Button colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
             Login / Sign Up
           </Button>
           <Button
             colorScheme="teal"
             variant="outline"
             display={{ base: "none", md: "inline-flex" }}
+           size={'sm'}
           >
             Admin Login
           </Button>
+          {/* <BsBag/>       */}
+          <CartDrawer/>
         </HStack>
       </Flex>
 
