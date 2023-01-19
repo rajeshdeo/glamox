@@ -14,6 +14,7 @@
     display: flex;
     gap: 5%;
     margin: auto;
+    margin-top: 5%;
 
 }
 .biggest_day_container>div>img{
@@ -33,4 +34,27 @@ width: 100%;
 }
 .biggest_day_subcontainer>div>img{
     width: 100%;
+}
+.small_headline{
+    width: 85%;
+    height: 15%;
+    /* border: 1px solid brown; */
+    margin: auto;
+}
+.small_headline>img{
+    width: 100%;
+}
+.sale_ary_saver_container{
+    width: 95%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    margin: auto;
+    margin-top: 5%;
+    gap: 2%;
+    
+}
+.sale_ary_saver_container>div>img{
+width: 100%;
 }
