@@ -1,6 +1,7 @@
 import React from 'react'
+import { Footer } from './LandingPage/Footer/footer'
 import { AllRoutes } from './Pages/AllRoutes'
-import { Footer } from './Pages/Footer'
+
 import { Navbar } from './Pages/Navbar'
 
 export const Display = () => {
@@ -8,7 +9,7 @@ export const Display = () => {
     <div>
       <Navbar />
       <AllRoutes />
-      <Footer />
+     <Footer />
     </div>
   )
 }
