@@ -1,10 +1,14 @@
 import React from 'react'
-import FrontPage from './LandingPage/FrontPage'
+import { AllRoutes } from './Pages/AllRoutes'
+import { Footer } from './Pages/Footer'
+import { Navbar } from './Pages/Navbar'
 
 export const Display = () => {
   return (
     <div>
-      <FrontPage />
+      <Navbar />
+      <AllRoutes />
+      <Footer />
     </div>
   )
 }
