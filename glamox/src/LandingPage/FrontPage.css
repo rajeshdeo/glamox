@@ -1,0 +1,36 @@
+.front_page_container{
+    width: 100%;
+    height: 100vh;
+}
+.caurosel_part{
+    width: 100%;
+    height: 20%;
+    border: 1px solid black;
+}
+.biggest_day_container{
+    width: 95%;
+    height: auto;
+    /* border: 2px solid teal; */
+    display: flex;
+    gap: 5%;
+    margin: auto;
+
+}
+.biggest_day_container>div>img{
+width: 100%;
+}
+.greycolor{
+    color: grey;
+}
+.biggest_day_subcontainer{
+    width: 60%;
+    height: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 5%;
+    margin: auto;
+    margin-top: 3%;
+}
+.biggest_day_subcontainer>div>img{
+    width: 100%;
+}
