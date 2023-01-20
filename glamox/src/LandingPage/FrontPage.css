@@ -1,27 +1,46 @@
 .front_page_container{
-    width: 100%;
-    height: 100vh;
+    width: 95%;
+    /* height: 100vh; */
 }
+
+
+
+/* .front_page_container img :hover{
+    transform: scale(1.1);
+    transition: all 1s linear;
+} */
 .caurosel_part{
     width: 100%;
     height: 20%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-left: 3%;
 }
 .biggest_day_container{
-    width: 95%;
+    width: 100%;
     height: auto;
     /* border: 2px solid teal; */
     display: flex;
-    gap: 5%;
+    gap: 1%;
     margin: auto;
-    margin-top: 5%;
+    /* margin-top: 5%; */
+    margin-left:5% ;
 
 }
 .biggest_day_container>div>img{
-width: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+    
 }
+
+.biggest_day_container>div>img:hover{
+    transform: scale(1.08);
+    transition: all 1s linear;
+    cursor: pointer;
+    }
 .greycolor{
     color: grey;
+    font-weight: 400;
+    font-size: large;
 }
 .biggest_day_subcontainer{
     width: 60%;
@@ -31,10 +50,17 @@ width: 100%;
     gap: 5%;
     margin: auto;
     margin-top: 3%;
+    margin-left: 25%;
 }
-.biggest_day_subcontainer>div>img{
+.biggest_day_subcontainer img{
     width: 100%;
 }
+.biggest_day_subcontainer img:hover{
+    transform: scale(1.08);
+    transition: all 1s linear;
+    cursor: pointer;
+}
+
 .small_headline{
     width: 85%;
     height: 15%;
@@ -42,6 +68,20 @@ width: 100%;
     margin: auto;
 }
 .small_headline>img{
+    width: 100%;
+}
+
+.stockup_container{
+    width: 95%;
+    height: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 5%;
+    margin: auto;
+    margin-left: 6%;
+    /* margin-top: 3%; */
+}
+.stockup_container>div>img{
     width: 100%;
 }
 .sale_ary_saver_container{
@@ -53,8 +93,48 @@ width: 100%;
     margin: auto;
     margin-top: 5%;
     gap: 2%;
+    margin-left: 6%;
     
 }
 .sale_ary_saver_container>div>img{
 width: 100%;
+}
+.sale_ary_saver_container>div>img:hover{
+    transform: scale(1.08);
+    transition: all 1s linear;
+    cursor: pointer;
+    }
+
+.super_saving_zone{
+    width: 100%;
+    height: 20%;
+    border: 1px solid red;
+    margin-left: 3%;
+}
+.super_saving_zone>img{
+    width: 100%;
+}
+.house_nykaa{
+    width: 70%;
+    height: 40%;
+    display: flex;
+    margin: auto;
+    gap: 2%;
+    margin-left: 18%;
+}
+.house_nykaa>div>img{
+    width: 100%;
+}
+h1{
+    font-weight: 400;
+}
+.shop_all{
+    
+width: 45%;
+height: 27%;
+margin: auto;
+margin-top: 7%;
+}
+.shop_all>img{
+    width: 100%;
 }
