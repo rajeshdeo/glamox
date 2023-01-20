@@ -7,10 +7,10 @@ import { Box, Heading, HStack, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
 
 export const CartItem = (props:any) => {
-  const {image,name,brand,price}=props;
+  const {image,name,brand,price,handleRemove,index}=props;
 
-  const handleDelete=()=>{
-    
+  const handleQuantity=(quan:React.ChangeEvent<HTMLSelectElement>)=>{
+    //console.log(quan.target.value)
   }
 
   return (
@@ -37,14 +37,14 @@ export const CartItem = (props:any) => {
                 {name}
               </Text>
             </CardBody>
-            <CloseButton alignSelf={"start"} onClick={handleDelete}/>
+            <CloseButton alignSelf={"start"} onClick={()=>handleRemove(index)}/>
           </HStack>
           <hr />
           <CardFooter border={'0px'} p={'2'}>
             <HStack border={"0px"} w={"100%"} justify={"space-between"}>
               <HStack>
                 <Text>Quantity:</Text>
-                <select name="pets" id="pet-select">
+                <select name="pets" id="pet-select" onChange={(el)=>handleQuantity(el)}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
