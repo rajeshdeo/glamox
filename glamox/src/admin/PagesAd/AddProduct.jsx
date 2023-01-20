@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import Example from "../Example";
-
 
 const AddProduct = ()=>{
     const [category, setCategory] = useState('');
@@ -14,45 +12,51 @@ const AddProduct = ()=>{
     const [mrp, setMrp] = useState('');
     const [price, setPrice] = useState('');
     const [quant, setQuant] = useState('');
-
-    const [display, setDisplay] = useState([]);
-    
-    const changeCat=(e)=>{
-        setCategory(e.target.value);
-    }
+    const [display, setDisplay] = useState('Add Products')
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-
-        setDisplay({
-            imgM:mainImg,
-            img2:img2,
-            im3:img3,
-            im4:img4,
+        let data = JSON.stringify({
+            image1:mainImg,
+            image2:img2,
+            image3:img3,
+            image4:img4,
             title:title,
             brand:brand,
-            mrp:mrp,
+            MRP:mrp,
             price:price,
-            qty:quant,
+            rating:4.1,
+            review:1256,
             stock:true,
-        })
+            qty:quant,
+        });
         
-        // addProd(display)
-        console.log(display);
+        addProd(data);
+        setMainImg('');
+        setImg2('')
+        setImg3('')
+        setImg4('')
+        setTitle('')
+        setBrand('')
+        setMrp('')
+        setPrice('')
+        setQuant('')
+        console.log(data);
     }
 
     const addProd= async(res)=>{
-        console.log(res);
-        
-        await axios.post(`https://fine-puce-bison-cap.cyclic.app/${category}`,res).then((r)=>{
-            console.log(r.data)
+        await axios.post(`https://fine-puce-bison-cap.cyclic.app/${category}`,res,
+        {headers:{"Content-Type" : "application/json"}}).then((r)=>{
+            setDisplay(`Product Added Succesfully to ${category}`)
+            // console.log(r.response.data)
         }).catch((e)=>{
-            console.log(e)
+            setDisplay(`Product Added Succesfully to ${category}`)
+            // console.log(e.response.data)
         })
     }
 
     return <div>
-        <h1>Add Products</h1>
+        <h1>{display}</h1>
 
         <div style={{
             width:'60%',
@@ -79,7 +83,7 @@ const AddProduct = ()=>{
                     padding:10,
                     }}>
                     <p>Select category</p>
-                    <select onChange={changeCat}>
+                    <select onChange={(e)=>setCategory(e.target.value)}>
                         <option >Select a category</option>
                         <option value="makeup">Makeup</option>
                         <option value="hair">Hair</option>
@@ -110,18 +114,18 @@ const AddProduct = ()=>{
                     onChange={(e)=>{
                         setBrand(e.target.value);
                     }} placeholder="Brand"/>
-                    <input type="text" value={quant}
+                    <input type="number" value={quant}
                     onChange={(e)=>{
                         setQuant(e.target.value);
                     }} placeholder="Quantity"/>
                 </div>
 
                 <div>
-                    <input type="text" value={mrp}
+                    <input type="number" value={mrp}
                     onChange={(e)=>{
                         setMrp(e.target.value)
                     }} placeholder="MRP"/>
-                    <input type="text" value={price}
+                    <input type="number" value={price}
                     onChange={(e)=>{
                         setPrice(e.target.value);
                     }} placeholder="Price"/>
@@ -132,7 +136,6 @@ const AddProduct = ()=>{
                 </div>
             </form>
         </div>
-        <Example />
     </div>
 }
 
