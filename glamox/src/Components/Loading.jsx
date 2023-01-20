@@ -4,7 +4,7 @@ import { Skeleton, SkeletonCircle, SkeletonText, Stack } from '@chakra-ui/react'
 const Loading = () => {
   return (
     <div>
-        faizaksk
+        dfhjgsdjfhgsdjhfg
     </div>
   )
 }
