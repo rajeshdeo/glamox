@@ -1,6 +1,6 @@
 .container {
     width: 80%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
     display: flex;
     padding: 3rem;

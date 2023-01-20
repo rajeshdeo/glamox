@@ -1,0 +1,13 @@
+.books-filter-container {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-componet {
+  width: 15%;
+  border-right: 1px solid gray;
+}
+
+.books-list {
+  width: 85%;
+}
