@@ -1,13 +1,13 @@
 import React from 'react'
+import Navbar from './Components/Navbar'
 import { Footer } from './LandingPage/Footer/footer'
 import { AllRoutes } from './Pages/AllRoutes'
 
-import { Navbar } from './Pages/Navbar'
 
 export const Display = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <AllRoutes />
      <Footer />
     </div>
