@@ -30,6 +30,13 @@ import { CartItem } from "./CartItem";
 export const CartDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<any>();
+
+  let cartitem=[
+    {id:'1',image:'https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/a/1/a184019SCAAA00000017_01.jpg',name:'Intense Hair Scalp Massager',brand:'Scalppie',price:349},
+    {id:'2',image:'https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/3/1/3171bd75060542721547.jpg',name:'Intense Hair Scalp Massager',brand:'Scalppie',price:349},
+    {id:'3',image:'https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/5/0/50673d2NYKAB00000248_1.jpg',name:'Intense Hair Scalp Massager',brand:'Scalppie',price:349}
+  ]
+
   return (
     <>
       <Box
@@ -56,8 +63,7 @@ export const CartDrawer = () => {
           <hr />
           <DrawerBody>
             <VStack>
-            <CartItem />
-            <CartItem/>
+            {cartitem.map((item)=><CartItem key={item.id} {...item}/>)}
             </VStack>
 {/* -----------------------Cart Price Details------------------------------------ */}
             <TableContainer

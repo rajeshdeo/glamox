@@ -6,7 +6,13 @@ import { Image } from "@chakra-ui/image";
 import { Box, Heading, HStack, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
 
-export const CartItem = () => {
+export const CartItem = (props:any) => {
+  const {image,name,brand,price}=props;
+
+  const handleDelete=()=>{
+    
+  }
+
   return (
     <div>
       <Card
@@ -17,7 +23,7 @@ export const CartItem = () => {
         <Image
           objectFit="cover"
           // maxW={{ base: '100%', sm: '200px' }}
-          src="https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/a/1/a184019SCAAA00000017_01.jpg"
+          src={image}
           alt="Caffe Latte"
           border={"0px"}
           w={"35%"}
@@ -26,12 +32,12 @@ export const CartItem = () => {
         <Stack>
           <HStack>
             <CardBody border={"0px"}>
-              <Heading size="md">Product Name</Heading>
+              <Heading size="md">{brand}</Heading>
               <Text py="2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                {name}
               </Text>
             </CardBody>
-            <CloseButton alignSelf={"start"} />
+            <CloseButton alignSelf={"start"} onClick={handleDelete}/>
           </HStack>
           <hr />
           <CardFooter border={'0px'} p={'2'}>
@@ -47,7 +53,7 @@ export const CartItem = () => {
                 </select>
               </HStack>
               <Heading size={"sm"} border={"0px"}>
-                price
+                ₹{price}
               </Heading>
             </HStack>
           </CardFooter>
