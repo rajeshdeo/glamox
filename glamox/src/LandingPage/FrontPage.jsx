@@ -1,19 +1,19 @@
 import React from "react";
-import "./FrontPage.module.css";
+import styles from "./FrontPage.module.css";
 import Ncarousel from "./Carousel";
 const FrontPage = () => {
   return (
-    <div className="front_page_container">
-      <div className="caurosel_part">
+    <div className={styles.front_page_container}>
+      <div className={styles.caurosel_part}>
         <Ncarousel />
       </div>
       {/* Biggest Payday Discount================================= */}
       <br />
       <br />
       <br />
-      <h1>Biggest PayDay Discounts</h1>
+      <h1 className={styles.big}>Biggest PayDay Discounts</h1>
 
-      <div className="biggest_day_container">
+      <div className={styles.biggest_day_container}>
         <div >
           <img className="biggest_day_divs"
             src="https://images-static.nykaa.com/uploads/be8647b2-3b91-4b4b-955f-1106080b8cd7.jpeg?tr=w-240,cm-pad_resize"
@@ -56,7 +56,7 @@ const FrontPage = () => {
         </div >
       </div>
 
-      <div className="biggest_day_subcontainer">
+      <div className={styles.biggest_day_subcontainer}>
         <div>
           <img
             src="https://images-static.nykaa.com/uploads/533fa5f1-8e0a-4f45-b2c2-ba3ec32ff629.jpeg?tr=w-240,cm-pad_resize"
@@ -89,7 +89,7 @@ const FrontPage = () => {
       <br />
 
       {/* small headline start =================*/}
-      <div className="small_headline">
+      <div className={styles.small_headline}>
         <img
           src="https://images-static.nykaa.com/uploads/70338135-f026-4824-9c6d-0b8a267d6dbb.jpg?tr=w-2400,cm-pad_resize"
           alt="error"
@@ -102,7 +102,7 @@ const FrontPage = () => {
 
       {/* stockup category start*/}
 
-      <div className="stockup_container">
+      <div className={styles.stockup_container}>
         <div>
           <img
             src="https://images-static.nykaa.com/uploads/3ecec5a4-7729-4abd-a36c-a34b4e45d067.jpg?tr=w-600,cm-pad_resize"
@@ -135,9 +135,9 @@ const FrontPage = () => {
       <br />
       
       {/* sale-ary saver start===================== */}
-      <h1>Sale-ary Savers</h1>
+      <h1 className={styles.big}>Sale-ary Savers</h1>
 
-      <div className="sale_ary_saver_container">
+      <div className={styles.sale_ary_saver_container}>
         {/* first part */}
         <div>
           <img
@@ -269,9 +269,9 @@ const FrontPage = () => {
       {/* sale-ary saver ends ===================== */}
 
       {/* Unbelievable Offers For You starts */}
-      <h1>Unbelievable Offers For You</h1>
+      <h1 className={styles.big}>Unbelievable Offers For You</h1>
 
-      <div className="sale_ary_saver_container">
+      <div className={styles.sale_ary_saver_container}>
         {/* first part */}
         <div>
           <img
@@ -399,7 +399,7 @@ const FrontPage = () => {
 
       {/* Unbelievable Offers For You ends */}
 
-      <div className="super_saving_zone">
+      <div className={styles.super_saving_zone}>
         <img
           src="https://images-static.nykaa.com/uploads/a00b5c11-f6b5-459b-9adb-efeac38a27b0.png?tr=w-2400,cm-pad_resize"
           alt="err"
@@ -409,8 +409,8 @@ const FrontPage = () => {
       <br />
       <br />
       {/* House of the nykaa starts*/}
-      <h1>House of the Nykaa</h1>
-      <div className="house_nykaa">
+      <h1 className={styles.big}>House of the Nykaa</h1>
+      <div className={styles.house_nykaa}>
         <div>
           <img
             src="https://images-static.nykaa.com/uploads/cc32e7ba-4f8d-443c-ad57-3893dc80931d.jpg?tr=w-480,cm-pad_resize"
@@ -448,7 +448,7 @@ const FrontPage = () => {
       {/* House of the nykaa ends */}
 
       {/* shop all starts */}
-      <div className="shop_all">
+      <div className={styles.shop_all}>
         <img
           src="https://images-static.nykaa.com/uploads/0e4e8e7e-af62-4bb1-9f89-f17e45908f12.png?tr=w-1200,cm-pad_resize"
           alt=""

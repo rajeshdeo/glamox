@@ -6,7 +6,9 @@ import HomeAd from '../admin/PagesAd/HomeAd';
 import MakeupAd from '../admin/PagesAd/MakeupList';
 import SkinAd from '../admin/PagesAd/SkinList';
 import FrontPage from '../LandingPage/FrontPage';
-
+// import { Home } from './Home';
+import Login from './Login';
+import Signup from './Signup';
 export const AllRoutes = () => {
   return (
     <div>
