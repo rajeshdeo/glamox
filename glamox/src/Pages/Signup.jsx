@@ -38,7 +38,7 @@ const Signup = () => {
         <div className="input_space">
           <input type="password" placeholder="Enter password" ref={password} />
         </div>
-        <button onClick={handleClick}>Sign Up</button>
+        <button className="praButton" onClick={handleClick}>Sign Up</button>
       </div>
       <div className="login_link">
             Not a member? <Link to="/login">Login</Link>

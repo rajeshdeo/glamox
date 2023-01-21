@@ -69,9 +69,11 @@ export default function Navbar() {
         </Flex>
 
         {/* ---------------------------------Logo & all (Flex-start)----------------------------------------- */}
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md:"flex-start" }} gap={'3'}>
+        <Flex flex={{ base: 1 }}
+        justify={{ base: "center", md:"flex-start" }} gap={'3'}>
           <Image
             onClick={()=>navigate('/')}
+            cursor={'pointer'}
             w={"7rem"}
             border={"0px"}
             src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
@@ -108,7 +110,7 @@ export default function Navbar() {
               Beauty
             </Heading> */}
           </HStack>
-        </Flex>
+        </Flex >
 
         {/*-------------------- Login/Signup and all (Flex-end)----------------------- */}
         <HStack
@@ -132,7 +134,7 @@ export default function Navbar() {
           </InputGroup>
 
           <Button 
-          onClick={()=>navigate('/prodlist')}
+          onClick={()=>navigate('/login')}
           colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
             Login / Sign Up
           </Button>

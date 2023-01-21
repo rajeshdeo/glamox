@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "../ReduxStore/AppStore/action";
 import { BookCard } from "./BookCard";
@@ -10,6 +10,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 export const BooksList = () => {
   const dispatch = useDispatch();
   const books = useSelector((store) => store.AppReducer.books);
+  const [cat,setCat] = useState('makeup')
   // console.log(books);
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -26,7 +27,7 @@ export const BooksList = () => {
       
     };
     console.log(order);
-    dispatch(getBooks(paramObj));
+    dispatch(getBooks(paramObj, cat));
   }, [location.search]);
   return (
     <DivWrapper>

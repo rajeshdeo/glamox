@@ -33,7 +33,7 @@ function Login() {
         <div className="input_space">
           <input type="password" placeholder="password" ref={password} />
         </div>
-        <button onClick={handleClick}>Login</button>
+        <button className="praButton" onClick={handleClick}>Login</button>
         <div className="login_link">
             Already a member? <Link to="/signup">Sign Up</Link>
         </div>
