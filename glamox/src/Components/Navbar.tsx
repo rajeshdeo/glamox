@@ -37,7 +37,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <Box position={'sticky'} top={'0'} zIndex={5}>
@@ -131,7 +131,9 @@ export default function Navbar() {
             <Input placeholder="Search" width="100%" />
           </InputGroup>
 
-          <Button colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
+          <Button 
+          onClick={()=>navigate('/prodlist')}
+          colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
             Login / Sign Up
           </Button>
           <Button

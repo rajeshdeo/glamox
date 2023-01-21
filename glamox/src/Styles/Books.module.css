@@ -1,0 +1,21 @@
+.Prod_div{
+    width: 80%;
+    /* border: 1px solid red; */
+    padding-top: 3rem;
+    margin: auto;
+    
+}
+
+.innerDiv{
+    display: flex;
+}
+
+.SideBar{
+    width: 30%;
+    text-align: left;
+    
+}
+
+.allProduct_div{
+    width: 70%;
+}
