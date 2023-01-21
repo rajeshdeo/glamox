@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./FrontPage.module.css";
 import Ncarousel from "./Carousel";
+import { Heading } from "@chakra-ui/react";
 const FrontPage = () => {
   return (
     <div className={styles.front_page_container}>

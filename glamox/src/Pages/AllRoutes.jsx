@@ -1,5 +1,8 @@
 import React from 'react'
 import {Routes,Route} from "react-router-dom";
+
+import PaymentsPage from '../Components/PaymentsPage';
+import SuccessPayment from '../Components/SuccessPayment';
 import AddProduct from '../admin/PagesAd/AddProduct';
 import HairAd from '../admin/PagesAd/HairList';
 import HomeAd from '../admin/PagesAd/HomeAd';
@@ -16,6 +19,9 @@ export const AllRoutes = () => {
         <Routes>
             {/* <Route path ="/" element={<Home />}/> */}
             <Route path ="/" element={<FrontPage />}/>
+
+            <Route path="/payments" element={<PaymentsPage/>}/>
+            <Route path="/successpayment" element={<SuccessPayment/>}/>
             <Route path ="/admin" element={<HomeAd/>}/>
             <Route path="/makeupAd" element={<MakeupAd/>}/>
             <Route path="/hairAd" element={<HairAd/>}/>
@@ -24,6 +30,7 @@ export const AllRoutes = () => {
             <Route path="/prodlist" element={<Books/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
+
 
         </Routes>
     </div>
