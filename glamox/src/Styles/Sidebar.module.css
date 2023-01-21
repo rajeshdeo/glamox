@@ -1,0 +1,52 @@
+.sidebar_div{
+    height: 20rem;
+    /* background-color: aqua; */
+    background-color: #ffe6ef;
+    border: 1px solid rgb(185, 180, 180);
+    border-right: 0ch;
+    border-left: 0;
+    padding-left: 2rem;
+    margin-right: 2rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+}
+
+.label{
+    margin-left: 1rem;
+    
+    margin-bottom: -3px;
+    align-items: center;
+}
+.brand_checkbox{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.radio_btn{
+    margin-left: 28px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    text-align: right;
+}
+.radio_label{
+    margin-left: 0.5rem;
+    
+}
+
+.filter_text{
+    margin-bottom: 1rem;
+}
+
+.sortByPrice{
+    margin-top: 2rem;
+}
+.sidebar_div>div{
+    padding: 0.1rem;
+    background-color: 	 #ffcce0;
+    margin-top: 0.1rem;
+    justify-content: center;
+    
+    
+}

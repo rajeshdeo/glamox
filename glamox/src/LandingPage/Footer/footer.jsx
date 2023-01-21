@@ -1,4 +1,4 @@
-import "./Footer.css";
+import  "./Footer.css";
 import { Icon } from "@iconify/react";
 import instagramWithCircle from "@iconify/icons-entypo-social/instagram-with-circle";
 // import facebookIcon from "@iconify/icons-ci/facebook";

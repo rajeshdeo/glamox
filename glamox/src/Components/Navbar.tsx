@@ -33,9 +33,11 @@ import { NavbarDropdown } from "./NavbarDropdown";
 
 import { useRef } from "react";
 import { CartDrawer } from "./CartDrawer";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const navigate = useNavigate()
 
   return (
     <Box position={"sticky"} top={"0"} zIndex={5}>
@@ -69,6 +71,7 @@ export default function Navbar() {
         </Flex>
 
         {/* ---------------------------------Logo & all (Flex-start)----------------------------------------- */}
+
         <Flex
           flex={{ base: 1 }}
           justify={{ base: "center", md: "flex-start" }}
@@ -77,6 +80,8 @@ export default function Navbar() {
           // w={'50%'}
         >
           <Image
+            onClick={()=>navigate('/')}
+            cursor={'pointer'}
             w={"7rem"}
             border={"0px"}
             paddingBottom={"2"}
@@ -115,7 +120,7 @@ export default function Navbar() {
               Beauty
             </Heading> */}
           </HStack>
-        </Flex>
+        </Flex >
 
         {/*-------------------- Login/Signup and all (Flex-end)----------------------- */}
         <HStack
@@ -140,16 +145,16 @@ export default function Navbar() {
             <Input placeholder="Search" width="100%" />
           </InputGroup>
 
-          <Button
-            colorScheme="pink"
-            as={"a"}
-            variant={"solid"}
-            href={"#"}
-            size={"sm"}
-          >
+
+
+          <Button 
+          onClick={()=>navigate('/login')}
+          colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
+
             Login / Sign Up
           </Button>
           <Button
+            onClick={()=>navigate("/admin")}
             colorScheme="teal"
             variant="outline"
             display={{ base: "none", md: "inline-flex" }}
