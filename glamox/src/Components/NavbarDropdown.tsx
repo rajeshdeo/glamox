@@ -316,7 +316,7 @@ export const NavbarDropdown = () => {
   ];
 
   const categories = [
-    "Makup",
+    "Makeup",
     "Skin",
     "Hair",
     "Fragrance",
