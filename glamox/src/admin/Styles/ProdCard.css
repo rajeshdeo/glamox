@@ -1,0 +1,46 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f7eaf6;
+  }
+  tr td{
+    border: 1px solid #ddd;
+  }
+  .buttons{
+    width: 50px;
+  }
+  .sku{
+    width: 30px;
+  }
+  .image{
+    width: 70px;
+  }
+  .title{
+    width: 300px;
+    overflow: hidden;
+  }
+  .brand{
+    width: 50px;
+  }
+  .mrp{
+    width: 50px;
+  }
+  .sell{
+    width: 60px;
+  }
+  .stock{
+    width: 42px;
+  }
+  .qty{
+    width: 40px;
+  }
+  
