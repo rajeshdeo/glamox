@@ -33,9 +33,11 @@ import { NavbarDropdown } from "./NavbarDropdown";
 
 import { useRef } from "react";
 import { CartDrawer } from "./CartDrawer";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const navigate = useNavigate();
 
   return (
     <Box position={'sticky'} top={'0'} zIndex={5}>
@@ -69,6 +71,7 @@ export default function Navbar() {
         {/* ---------------------------------Logo & all (Flex-start)----------------------------------------- */}
         <Flex flex={{ base: 1 }} justify={{ base: "center", md:"flex-start" }} gap={'3'}>
           <Image
+            onClick={()=>navigate('/')}
             w={"7rem"}
             border={"0px"}
             src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
@@ -132,6 +135,7 @@ export default function Navbar() {
             Login / Sign Up
           </Button>
           <Button
+            onClick={()=>navigate("/admin")}
             colorScheme="teal"
             variant="outline"
             display={{ base: "none", md: "inline-flex" }}

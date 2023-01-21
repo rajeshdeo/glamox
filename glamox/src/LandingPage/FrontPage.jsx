@@ -1,5 +1,5 @@
 import React from "react";
-import "./FrontPage.css";
+import "./FrontPage.module.css";
 import Ncarousel from "./Carousel";
 const FrontPage = () => {
   return (
