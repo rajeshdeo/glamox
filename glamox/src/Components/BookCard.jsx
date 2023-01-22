@@ -5,16 +5,29 @@ import { FaBeer } from 'react-icons/fa';
 import { AiFillStar,AiOutlineStar,BsStarHalf } from 'react-icons/fa';
 import { BooksList } from "./BooksList";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart } from "../ReduxStore/CartStore/acton";
+import { useToast } from "@chakra-ui/toast";
+import Alert from "./Alert";
 
 export const BookCard = ({ book }) => {
+  const dispatch=useDispatch();
   const navigate = useNavigate();
-
+  const toast = useToast()
   const product = ()=>{
-    console.log(typeof(book));
+    // console.log(typeof(book));
 
-    let res= axios.post('https://fine-puce-bison-cap.cyclic.app/cart', book).then((r)=>{
+    // let res= axios.post('https://fine-puce-bison-cap.cyclic.app/cart', book).then((r)=>{
       
-    }).catch((e)=>{alert('added succesfully');})
+    // }).catch((e)=>{alert('added succesfully');})
+
+    dispatch(addCart(book))
+    let alertdata = {
+      title: 'Item added to cart ',
+      description: "",
+      status: 'success',
+  }
+  toast(Alert(alertdata))
   }
   
   

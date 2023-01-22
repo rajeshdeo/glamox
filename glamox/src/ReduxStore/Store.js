@@ -6,9 +6,10 @@ import {
   import thunk from "redux-thunk";
   import {reducer as AppReducer} from "../ReduxStore/AppStore/reducer";
   import {reducer as AuthReducer} from "../ReduxStore/AuthStore/reducer";
+  import {reducer as CartReducer} from "../ReduxStore/CartStore/reducer"
   
   
-  let rootReducer = combineReducers({ AppReducer,AuthReducer,});
+  let rootReducer = combineReducers({ AppReducer,AuthReducer,CartReducer});
 
   
  

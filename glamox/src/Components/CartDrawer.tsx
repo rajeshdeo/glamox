@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Input } from "@chakra-ui/input";
-import { Box, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/layout";
+import { Box, Center, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/layout";
 import {
   Table,
   TableCaption,
@@ -28,6 +28,12 @@ import { BsBag } from "react-icons/bs";
 import { CartItem } from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addCart,
+  quantityCart,
+  removeCart,
+} from "../ReduxStore/CartStore/acton";
 
 // let cartitem = [
 //   {
@@ -68,7 +74,6 @@ import axios from "axios";
 //   },
 // ];
 
-
 function reducer(state: any, action: any) {
   switch (action.type) {
     case "total":
@@ -89,72 +94,75 @@ let initial = {
 };
 
 export const CartDrawer = () => {
+  const myCart = useSelector((store: any) => store.CartReducer);
+  const dispatcher = useDispatch();
+  //console.log(myCart)
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<any>(null);
-  const [cart, setCart] = React.useState<(any)>([]);
+  const [cart, setCart] = React.useState<any>([]);
   const [state, dispatch] = React.useReducer<(a: any, b: any) => any>(
     reducer,
     initial
   );
-  // console.log(cart)
-
-  const fetchcartdata=()=>{
-    axios({
-      method:'get',
-      url:'https://fine-puce-bison-cap.cyclic.app/cart',
-    })
-    .then((res)=>{
-      // console.log(res)
-      setCart(res.data)
-    })
-    .catch((err)=>{
-      console.error(err)
-    })
-  }
+  //console.log(cart)
+  //console.log(cart.length!=0?cart[0].altprice():[])
+  // const fetchcartdata=()=>{
+  //   axios({
+  //     method:'get',
+  //     url:'https://fine-puce-bison-cap.cyclic.app/cart',
+  //   })
+  //   .then((res)=>{
+  //     // console.log(res)
+  //     setCart(res.data)
+  //   })
+  //   .catch((err)=>{
+  //     console.error(err)
+  //   })
+  // }
 
   const handleRemove = (id: number) => {
-    // setCart((prev:any) => prev.filter((el:any, i:any) => i != id));
-    axios.delete(`https://fine-puce-bison-cap.cyclic.app/cart/${id}`).then((r)=>{
-      // let x = axios.get('https://fine-puce-bison-cap.cyclic.app/cart').then((r)=>{
-      //   setCart(x);
-      // }).catch((e)=>console.log(e))
-      console.log(r.data)
-    }).catch((e)=> console.log(e));
-
+    //setCart((prev:any) => prev.filter((el:any, i:any) => i != id));
+    // axios.delete(`https://fine-puce-bison-cap.cyclic.app/cart/${id}`).then((r)=>{
+    // let x = axios.get('https://fine-puce-bison-cap.cyclic.app/cart').then((r)=>{
+    //   setCart(x);
+    // }).catch((e)=>console.log(e))
+    //   console.log(r.data)
+    // }).catch((e)=> console.log(e));
+    // dispatch(removeCart(id))
   };
 
   const handleQuantity = (index: number, quan: any) => {
-    
     let newquan = Number(quan.target.value);
-    console.log(quan.target.value)
-    
-    setCart((prev:any) =>
-      prev?.map((el:any, i:any) => {
-        return i == index ? { ...el, qty: newquan } : { ...el };
-      })
-    );
+    console.log(quan.target.value);
+
+    // setCart((prev:any) =>
+    //   prev?.map((el:any, i:any) => {
+    //     return i == index ? { ...el, qty: newquan } : { ...el };
+    //   })
+    // );
   };
 
-   const handlePrice = (index: number) => {
-  //   for (let i = 0; i < cart.length; i++) {
-  //     if (i == index) return cart[i].altprice();
-  //   }
-   };
+  const handlePrice = (index: number) => {
+    for (let i = 0; i < cart.length; i++) {
+      if (i == index) return cart[i].altprice();
+    }
+  };
 
-  useEffect(() => {   
+  useEffect(() => {
     let sum = 0;
     let mrp;
-    cart.map((item:any) => (sum += item.price));
+    cart.map((item: any) => (sum += item.price * item.qty));
     dispatch({ type: "total", payload: sum });
     mrp = Math.round(sum + (12 / 100) * sum);
     dispatch({ type: "mrp", payload: mrp });
     dispatch({ type: "discount", payload: mrp - sum });
   }, [cart]);
 
-  useEffect(()=>{
-    fetchcartdata();
-  },[])
+  useEffect(() => {
+    //   fetchcartdata();
+    setCart(myCart);
+  }, [myCart]);
 
   return (
     <>
@@ -166,9 +174,18 @@ export const CartDrawer = () => {
         onClick={onOpen}
         _hover={{ cursor: "pointer", backgroundColor: "teal", color: "white" }}
       >
-        <Flex>
+        <Flex border={"0px"} w={"130%"}>
           <BsBag />
-          <p>{cart.length}</p>
+          <Text
+            fontSize={"x-small"}
+            border={"0px"}
+            borderRadius={"50%"}
+            p={"0% 10%"}
+            bg={"red.500"}
+            color={'white'}
+          >
+            {cart.length}
+          </Text>
         </Flex>
       </Box>
       <Drawer
@@ -186,24 +203,26 @@ export const CartDrawer = () => {
           <DrawerBody>
             {/* -------------------------Cart Items------------------------------------------ */}
             <VStack>
-              {cart.map((item:any, index:any) => (
+              {cart?.map((item: any, index: any) => (
                 <CartItem
                   key={item.id}
                   {...item}
                   handleRemove={handleRemove}
                   index={index}
-                  handleQuantity={+handleQuantity}
-                  handlePrice={+handlePrice}
+                  handleQuantity={handleQuantity}
+                  handlePrice={handlePrice}
                 />
               ))}
             </VStack>
             {/* -----------------------Cart Price Details------------------------------------ */}
+            
+            {cart.length!=0?
             <TableContainer
               border={"1px solid grey"}
               marginTop={5}
               borderRadius={"5"}
             >
-              <Table variant="simple">
+              <Table variant="simple" >
                 <Thead>
                   <Tr>
                     <Th>Price Details</Th>
@@ -215,8 +234,8 @@ export const CartDrawer = () => {
                     <Td isNumeric>₹ {+state.mrp}</Td>
                   </Tr>
                   <Tr>
-                    <Td>Bag Discount</Td>
-                    <Td isNumeric>₹ {+state.discount}</Td>
+                    <Td bg={'white'}>Bag Discount</Td>
+                    <Td bg={'white'} isNumeric>₹ {+state.discount}</Td>
                   </Tr>
                   <Tr>
                     <Td>Shipping</Td>
@@ -231,6 +250,8 @@ export const CartDrawer = () => {
                 </Tfoot>
               </Table>
             </TableContainer>
+             :
+             <Center><Heading paddingTop={'40'}>Oops... <br/> Your bag is Empty</Heading></Center>    }
           </DrawerBody>
           <hr />
           <DrawerFooter>

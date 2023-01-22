@@ -31,7 +31,7 @@ import {
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useNavigate,Link } from "react-router-dom";
-// import Alert from "../Components/Alert";
+import Alert from "./Alert";
 // import PinModal from "../Components/PinModal";
 //import PinVerificationModal from '../Components/PinVerificationModal'
 
@@ -40,7 +40,7 @@ export default function PaymentsPage() {
 
   const navigate = useNavigate();
 
-  // const toast = useToast()
+   const toast = useToast()
 
   const colors = useColorModeValue(
     ["red.50", "teal.50", "blue.50"],
@@ -56,15 +56,15 @@ export default function PaymentsPage() {
   };
 
   const handleCash = () => {
-    //     let alertdata = {
-    //         title: ' Incorrect Capcha',
-    //         description: "Please try again",
-    //         status: 'warning',
-//   };
+        let alertdata = {
+            title: ' Incorrect Capcha',
+            description: "Please try again",
+            status: 'warning',
+  }
 
   //     if (random != entered) toast(Alert(alertdata))
   //     else navigate('/paymentdone')
-    if(random!=entered) alert('Please try again')
+    if(random!=entered) toast(Alert(alertdata))
     else navigate('/successpayment')
   }
     

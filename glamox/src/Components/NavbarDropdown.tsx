@@ -381,7 +381,7 @@ export const NavbarDropdown = () => {
                                     border={"0px"}
                                     key={j}
                                     fontWeight={i === 0 ? "bold" : "normal"}
-                                    bg={j%2==1?'#F7F6F6':"none"}
+                                    bg={j%2==1?'#F7F6F6':"white"}
                                     _hover={{'color':'pink.400', cursor:'pointer'}}
                                   >
                                     {data}
