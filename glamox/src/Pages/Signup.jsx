@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../sytles/Signup.css";
+import styles from "../sytles/Signup.module.css";
 
 const Signup = () => {
   const name = useRef();
@@ -24,23 +24,23 @@ const Signup = () => {
     }
   };
   return (
-    <div className="signup_box">
+    <div className={styles.signup_box}>
 
-    <div className="signup_main_container">
+    <div className={styles.signup_main_container}>
       <h1>Register</h1>
-      <div className="signup_container">
-        <div className="input_space">
+      <div className={styles.signup_container}>
+        <div className={styles.input_space}>
           <input type="text" placeholder="Enter Your Name" ref={name} />
         </div>
-        <div className="input_space">
+        <div className={styles.input_space}>
           <input type="email" placeholder="Enter Your Email" ref={email} />
         </div>
-        <div className="input_space">
+        <div className={styles.input_space}>
           <input type="password" placeholder="Enter password" ref={password} />
         </div>
         <button onClick={handleClick}>Sign Up</button>
       </div>
-      <div className="login_link">
+      <div className={styles.login_link}>
             Not a member? <Link to="/login">Login</Link>
         </div>
     </div>
