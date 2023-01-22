@@ -5,3 +5,33 @@
     padding: 1rem;
     
 }
+
+.prod_title{
+    margin-top: 1rem;
+    font-weight: 550;
+    margin-bottom: 15px;
+    height: 3rem;
+    /* border: 1px solid teal; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.cutPrice{
+    text-decoration: line-through;
+    color: grey;
+}
+
+.add_cart_btn{
+    background-color: #ff3381;
+    color: white;
+    font-weight: 800;
+    padding: 0.8rem;
+    margin-top: 20px;
+}
+
+.add_cart_btn:hover{
+    background-color: #ff1a71;
+    color: white;
+    font-weight: 800;
+    padding: 0.8rem;
+    margin-top: 20px;
+}
