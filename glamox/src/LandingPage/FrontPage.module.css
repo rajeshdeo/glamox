@@ -51,7 +51,8 @@
 .greycolor{
     color: grey;
     font-weight: 400;
-    font-size: large;
+    font-size: 18px;
+    padding-top: 5px;
 }
 .biggest_day_subcontainer{
     width: 60%;
@@ -165,4 +166,13 @@ margin-top: 7%;
 .big{
     font-size: 40px;
     padding-bottom: 20px;
+}
+.hh3{
+    font-size: 22px;
+    padding-top: 10px;
+}
+.bigsale{
+    font-size: 40px;
+    padding-top: 10px;
+    
 }
