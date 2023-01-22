@@ -26,33 +26,48 @@ import {
 import React, { useEffect } from "react";
 import { BsBag } from "react-icons/bs";
 import { CartItem } from "./CartItem";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-let cartitem = [
-  {
-    id: "1",
-    image:
-      "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/a/1/a184019SCAAA00000017_01.jpg",
-    name: "Intense Hair Scalp Massager",
-    brand: "Scalppie",
-    price: 349,
-  },
-  {
-    id: "2",
-    image:
-      "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/3/1/3171bd75060542721547.jpg",
-    name: "Intense Hair Scalp Massager",
-    brand: "Scalppie",
-    price: 348,
-  },
-  {
-    id: "3",
-    image:
-      "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/5/0/50673d2NYKAB00000248_1.jpg",
-    name: "Intense Hair Scalp Massager",
-    brand: "Scalppie",
-    price: 347,
-  },
-];
+// let cartitem = [
+//   {
+//     id: "1",
+//     image:
+//       "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/a/1/a184019SCAAA00000017_01.jpg",
+//     name: "Intense Hair Scalp Massager",
+//     brand: "Scalppie",
+//     price: 349,
+//     quantity: 1,
+//     altprice: function () {
+//       return this.price * this.quantity;
+//     },
+//   },
+//   {
+//     id: "2",
+//     image:
+//       "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/3/1/3171bd75060542721547.jpg",
+//     name: "Intense Hair Scalp Massager",
+//     brand: "Scalppie",
+//     price: 348,
+//     quantity: 1,
+//     altprice: function () {
+//       return this.price * this.quantity;
+//     },
+//   },
+//   {
+//     id: "3",
+//     image:
+//       "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/5/0/50673d2NYKAB00000248_1.jpg",
+//     name: "Intense Hair Scalp Massager",
+//     brand: "Scalppie",
+//     price: 347,
+//     quantity: 1,
+//     altprice: function () {
+//       return this.price * this.quantity;
+//     },
+//   },
+// ];
+
 
 function reducer(state: any, action: any) {
   switch (action.type) {
@@ -74,34 +89,70 @@ let initial = {
 };
 
 export const CartDrawer = () => {
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<any>(null);
-  const [cart, setCart] = React.useState(cartitem);
+  const [cart, setCart] = React.useState<(any)>([]);
   const [state, dispatch] = React.useReducer<(a: any, b: any) => any>(
     reducer,
     initial
   );
+  console.log(cart)
+
+  const fetchcartdata=()=>{
+    axios({
+      method:'get',
+      url:'https://fine-puce-bison-cap.cyclic.app/cart',
+    })
+    .then((res)=>{
+      console.log(res)
+      setCart(res.data)
+    })
+    .catch((err)=>{
+      console.error(err)
+    })
+  }
 
   const handleRemove = (index: number) => {
-    setCart((prev) => prev.filter((el, i) => i != index));
+    setCart((prev:any) => prev.filter((el:any, i:any) => i != index));
   };
 
-  useEffect(() => {
+  const handleQuantity = (index: number, quan: any) => {
+    let newquan = Number(quan.target.value);
+    console.log(quan.target.value)
+    setCart((prev:any) =>
+      prev?.map((el:any, i:any) => {
+        return i == index ? { ...el, qty: newquan } : { ...el };
+      })
+    );
+  };
+
+   const handlePrice = (index: number) => {
+  //   for (let i = 0; i < cart.length; i++) {
+  //     if (i == index) return cart[i].altprice();
+  //   }
+   };
+
+  useEffect(() => {   
     let sum = 0;
     let mrp;
-    cart.map((item) => (sum += item.price));
+    cart.map((item:any) => (sum += item.price));
     dispatch({ type: "total", payload: sum });
     mrp = Math.round(sum + (12 / 100) * sum);
     dispatch({ type: "mrp", payload: mrp });
     dispatch({ type: "discount", payload: mrp - sum });
   }, [cart]);
 
+  useEffect(()=>{
+    fetchcartdata();
+  },[])
+
   return (
     <>
       <Box
         ref={btnRef}
         border={"0px"}
-        p={"1"}
+        p={"2"}
         borderRadius={"full"}
         onClick={onOpen}
         _hover={{ cursor: "pointer", backgroundColor: "teal", color: "white" }}
@@ -123,12 +174,14 @@ export const CartDrawer = () => {
           <DrawerBody>
             {/* -------------------------Cart Items------------------------------------------ */}
             <VStack>
-              {cart.map((item, index) => (
+              {cart.map((item:any, index:any) => (
                 <CartItem
                   key={item.id}
                   {...item}
                   handleRemove={handleRemove}
                   index={index}
+                  handleQuantity={handleQuantity}
+                  handlePrice={handlePrice}
                 />
               ))}
             </VStack>
@@ -174,8 +227,11 @@ export const CartDrawer = () => {
               <Button
                 colorScheme={"pink"}
                 mr={3}
-                onClick={onClose}
                 rightIcon={<ArrowForwardIcon />}
+                onClick={() => {
+                  onClose();
+                  navigate("/payments");
+                }}
               >
                 Proceed
               </Button>

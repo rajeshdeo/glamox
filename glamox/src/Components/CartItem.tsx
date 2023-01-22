@@ -7,11 +7,11 @@ import { Box, Heading, HStack, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
 
 export const CartItem = (props:any) => {
-  const {image,name,brand,price,handleRemove,index}=props;
-
-  const handleQuantity=(quan:React.ChangeEvent<HTMLSelectElement>)=>{
-    //console.log(quan.target.value)
-  }
+  const {image1,title,brand,price,qty,handleRemove,index,handleQuantity,handlePrice}=props;
+//  console.log(altprice())
+  // const handleQuantity=(quan:React.ChangeEvent<HTMLSelectElement>)=>{
+  //   //console.log(quan.target.value)
+  // }
 
   return (
     <div>
@@ -23,7 +23,7 @@ export const CartItem = (props:any) => {
         <Image
           objectFit="cover"
           // maxW={{ base: '100%', sm: '200px' }}
-          src={image}
+          src={image1}
           alt="Caffe Latte"
           border={"0px"}
           w={"35%"}
@@ -34,7 +34,7 @@ export const CartItem = (props:any) => {
             <CardBody border={"0px"}>
               <Heading size="md">{brand}</Heading>
               <Text py="2">
-                {name}
+                {title}
               </Text>
             </CardBody>
             <CloseButton alignSelf={"start"} onClick={()=>handleRemove(index)}/>
@@ -44,7 +44,7 @@ export const CartItem = (props:any) => {
             <HStack border={"0px"} w={"100%"} justify={"space-between"}>
               <HStack>
                 <Text>Quantity:</Text>
-                <select name="pets" id="pet-select" onChange={(el)=>handleQuantity(el)}>
+                <select name="pets" id="pet-select" onChange={(el)=>handleQuantity(index,el)}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -53,7 +53,7 @@ export const CartItem = (props:any) => {
                 </select>
               </HStack>
               <Heading size={"sm"} border={"0px"}>
-                ₹{price}
+                ₹ {price}
               </Heading>
             </HStack>
           </CardFooter>

@@ -9,12 +9,13 @@
 }
 .signup_main_container{
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
     background:white;
     border-radius: 5%;
+    padding: 10px;
 }
 .signup_main_container h1{
     text-align: center;
@@ -47,6 +48,7 @@
     font-weight: 700;
     cursor: pointer;
     outline: none;
+    
 }
 .praButton:hover{
     border-color: #2691d9;
@@ -70,3 +72,8 @@
     /* overflow: hidden; */
     /* border: 1px solid red; */
   }
+  .reg{
+    font-size: 35px;
+    font-weight: 500;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
