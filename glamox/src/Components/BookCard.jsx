@@ -13,8 +13,8 @@ export const BookCard = ({ book }) => {
     console.log(typeof(book));
 
     let res= axios.post('https://fine-puce-bison-cap.cyclic.app/cart', book).then((r)=>{
-      console.log('added succesfully');
-    }).catch((e)=>{console.log(e);})
+      
+    }).catch((e)=>{alert('added succesfully');})
   }
   
   

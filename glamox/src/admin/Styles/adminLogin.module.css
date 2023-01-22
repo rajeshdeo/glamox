@@ -1,0 +1,66 @@
+.heading{
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.heading h1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.inputBox{
+    border: 1px solid #ddd;
+    width: 50%;
+    height: 60%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mainBox{
+    border: 1px solid #ddd;
+    width: 60%;
+    height: 50vh;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+.sideAddButtonBox{
+    width: 100%;
+    /* border: 1px solid; */
+    margin: auto;
+    text-align: center;
+}
+.sideAddButton{
+    /* border: 1px solid; */
+    width: 200px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #D53F8C;
+    color: white;
+  }
+.sideAddButton:hover{
+    background-color: #f5e4ed;
+    color: black;
+}
+.input{
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.imageInputBox{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+    gap: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}

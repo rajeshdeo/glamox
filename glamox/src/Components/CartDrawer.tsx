@@ -113,8 +113,15 @@ export const CartDrawer = () => {
     })
   }
 
-  const handleRemove = (index: number) => {
-    setCart((prev:any) => prev.filter((el:any, i:any) => i != index));
+  const handleRemove = (id: number) => {
+    // setCart((prev:any) => prev.filter((el:any, i:any) => i != id));
+    axios.delete(`https://fine-puce-bison-cap.cyclic.app/cart/${id}`).then((r)=>{
+      // let x = axios.get('https://fine-puce-bison-cap.cyclic.app/cart').then((r)=>{
+      //   setCart(x);
+      // }).catch((e)=>console.log(e))
+      console.log(r.data)
+    }).catch((e)=> console.log(e));
+
   };
 
   const handleQuantity = (index: number, quan: any) => {
@@ -159,7 +166,10 @@ export const CartDrawer = () => {
         onClick={onOpen}
         _hover={{ cursor: "pointer", backgroundColor: "teal", color: "white" }}
       >
-        <BsBag />
+        <Flex>
+          <BsBag />
+          <p>{cart.length}</p>
+        </Flex>
       </Box>
       <Drawer
         isOpen={isOpen}

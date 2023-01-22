@@ -14,6 +14,8 @@ import { Books } from './Books';
 import Login from './Login';
 import Signup from './Signup';
 import SingleProduct from './SingleProduct';
+import LoginAdmin from './LoginAdmin';
+import PrivateRoute from '../Components/PrivateRoute';
 export const AllRoutes = () => {
   return (
     <div>
@@ -23,13 +25,14 @@ export const AllRoutes = () => {
 
             <Route path="/payments" element={<PaymentsPage/>}/>
             <Route path="/successpayment" element={<SuccessPayment/>}/>
-            <Route path ="/admin" element={<HomeAd/>}/>
+            <Route path ="/admin" element={<PrivateRoute><HomeAd/></PrivateRoute>}/>
             <Route path="/makeupAd" element={<MakeupAd/>}/>
             <Route path="/hairAd" element={<HairAd/>}/>
             <Route path="/skinAd" element={<SkinAd/>}/>
             <Route path="/add" element={<AddProduct/>}/>
             <Route path="/prodlist" element={<Books/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/adlogin" element={<LoginAdmin/>}/>
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/single/:id" element={<SingleProduct/>}/>
         </Routes>

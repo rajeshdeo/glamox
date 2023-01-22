@@ -5,6 +5,7 @@ import AdminNav from '../Components/AdminNav';
 import ProdListCard from '../Components/ProdListCard';
 // import styles from '../Styles/ProdCard.module.css';
 import styles from '../Styles/tableHeadingAd.module.css'
+
 const MakeupAd = ()=>{
     const navigate = useNavigate();
     const [data, setData] = useState([]);
