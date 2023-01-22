@@ -32,7 +32,7 @@ export const BookCard = ({ book }) => {
 
       <div className={styles.sideAddButtonBox}>
         <button className={styles.sideAddButton}
-        onClick={product}>Add</button>
+        onClick={product}>Add to Cart</button>
       </div>
     </div>
   );
