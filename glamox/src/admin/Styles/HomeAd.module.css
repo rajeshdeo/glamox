@@ -1,0 +1,33 @@
+.heading{
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.heading h1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.buttonBox{
+    width:80%;
+    height: 8vh;
+    font-size: 25px;
+    margin:auto;
+    /* border:1px solid #ddd; */
+    padding:10;
+    display:flex;
+    justify-content:space-around;
+}
+
+.buttonBox button{
+    border: 1px solid #ddd;
+    width: 250px;
+    border-radius: 8px;
+}
+.buttonBox button:hover{
+    background-color: rgb(248, 237, 245);
+}

@@ -35,3 +35,23 @@
     padding: 0.8rem;
     margin-top: 20px;
 }
+
+.sideAddButtonBox{
+    width: 100%;
+    /* border: 1px solid; */
+    margin: 10px auto;
+    text-align: center;
+  }
+  .sideAddButton{
+    /* border: 1px solid; */
+    width: 200px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #D53F8C;
+    color: white;
+  }
+  .sideAddButton:hover{
+    background-color: #f5e4ed;
+    color: black;
+  }

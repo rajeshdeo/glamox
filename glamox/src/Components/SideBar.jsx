@@ -82,22 +82,29 @@ export const SideBar = () => {
 
       
       <h3 className={styles.sortByPrice}>Sort By Price</h3>
-      <div onChange={handleSort}>
-        <input
-          className={styles.radio_btn}
-          type="radio"
-          name="sort_by"
-          value={"asc"}
-          defaultChecked={order === "asc"}
-        />
-        <label className={styles.radio_label}>High to Low</label>
-        <input className={styles.radio_btn}
-          type="radio"
-          name="sort_by"
-          value={"desc"}
-          defaultChecked={order === "desc"}
-        />
-        <label className={styles.radio_label}>Low to High</label>
+
+      <div className={styles.sortBox}>
+        <div className={styles.sortBoxIn}>
+          <input
+            onChange={handleSort}
+            className={styles.radio_btn}
+            type="radio"
+            name="sort_by"
+            value={"asc"}
+            defaultChecked={order === "asc"}
+          />
+          <label className={styles.radio_label}>High to Low</label>
+        </div>
+
+        <div className={styles.sortBoxIn}>
+          <input className={styles.radio_btn}
+            type="radio"
+            name="sort_by"
+            value={"desc"}
+            defaultChecked={order === "desc"}
+          />
+          <label className={styles.radio_label}>Low to High</label>
+        </div>
       </div>
     </div>
   );

@@ -182,8 +182,8 @@ export const CartDrawer = () => {
                   {...item}
                   handleRemove={handleRemove}
                   index={index}
-                  handleQuantity={handleQuantity}
-                  handlePrice={handlePrice}
+                  handleQuantity={+handleQuantity}
+                  handlePrice={+handlePrice}
                 />
               ))}
             </VStack>
@@ -202,11 +202,11 @@ export const CartDrawer = () => {
                 <Tbody>
                   <Tr>
                     <Td>Bag MRP</Td>
-                    <Td isNumeric>₹ {state.mrp}</Td>
+                    <Td isNumeric>₹ {+state.mrp}</Td>
                   </Tr>
                   <Tr>
                     <Td>Bag Discount</Td>
-                    <Td isNumeric>₹ {state.discount}</Td>
+                    <Td isNumeric>₹ {+state.discount}</Td>
                   </Tr>
                   <Tr>
                     <Td>Shipping</Td>
@@ -216,7 +216,7 @@ export const CartDrawer = () => {
                 <Tfoot>
                   <Tr>
                     <Th>You Pay</Th>
-                    <Th isNumeric>₹ {state.total}</Th>
+                    <Th isNumeric>₹ {+state.total}</Th>
                   </Tr>
                 </Tfoot>
               </Table>
@@ -225,7 +225,7 @@ export const CartDrawer = () => {
           <hr />
           <DrawerFooter>
             <HStack justifyContent={"space-between"} border={"0px"} w={"100%"}>
-              <Heading size={"md"}>Total: ₹ {state.total}</Heading>
+              <Heading size={"md"}>Total: ₹ {+state.total}</Heading>
               <Button
                 colorScheme={"pink"}
                 mr={3}

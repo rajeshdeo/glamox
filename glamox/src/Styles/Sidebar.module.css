@@ -1,14 +1,10 @@
 .sidebar_div{
-    height: 20rem;
-    /* background-color: aqua; */
+    height: 100vh;
+    margin-top: 20px;
     background-color: #ffe6ef;
-    border: 1px solid rgb(185, 180, 180);
-    border-right: 0ch;
-    border-left: 0;
-    padding-left: 2rem;
-    margin-right: 2rem;
-    padding-top: 2rem;
-    padding-right: 2rem;
+    width: 70%;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .label{
@@ -47,6 +43,19 @@
     background-color: 	 #ffcce0;
     margin-top: 0.1rem;
     justify-content: center;
+}
+.sortBox{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     
-    
+    /* border: 1px solid; */
+}
+.sortBoxIn{
+    display: flex;
+    /* font-size: 15px; */
+    margin-left: 0px;
+}
+.sortBoxIn input{
+    width: 15px;
 }

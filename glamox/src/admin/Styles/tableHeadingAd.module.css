@@ -40,7 +40,7 @@ tr td{
     border: 1px solid #ddd;
 }
 .buttons{
-    width: 80px;
+    width: 88px;
   }
 .buttonBox{
     display:flex;
@@ -58,10 +58,10 @@ tr td{
     width: 32.5px;
   }
 .image{
-    width: 70px;
+    width: 74px;
   }
 .title{
-    width: 300px;
+    width: 330px;
     box-sizing: border-box;
     overflow: hidden;
   }
@@ -75,9 +75,45 @@ tr td{
     width: 60px;
   }
 .stock{
-    width: 57px;
+    width: 50px;
 }
 .qty{
-    width: 43px;
+    width: 40px;
 }
-  
+
+/* =======[Side Pannel]========= */
+.sideContainer{
+  width:20%;
+  margin:auto;
+  border:1px solid #ddd;
+  height:80%;
+}
+.sideBox{
+  width:80%;
+  margin:auto;
+  border:1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 10px;
+}
+.sideAddButtonBox{
+  width: 100%;
+  /* border: 1px solid; */
+  margin: auto;
+  text-align: center;
+}
+.sideAddButton{
+  /* border: 1px solid; */
+  width: 200px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #D53F8C;
+  color: white;
+}
+.sideAddButton:hover{
+  background-color: #f5e4ed;
+  color: black;
+}

@@ -30,8 +30,10 @@ export const BookCard = ({ book }) => {
       <p>MRP:<span className={styles.cutPrice}>₹{book.MRP}</span> ₹{book.price}</p>
       <p>Brand: {book.brand}</p>
 
-      <button onClick={product}
-      style={{background:"#FC7CB8"}}>Add</button>
+      <div className={styles.sideAddButtonBox}>
+        <button className={styles.sideAddButton}
+        onClick={product}>Add</button>
+      </div>
     </div>
   );
 };
