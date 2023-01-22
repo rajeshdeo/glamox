@@ -116,7 +116,11 @@ export const Footer = () => {
           </div>
           <div>
             <div id='love'>Show us some love ❤ on social media</div>
-            <ul id='ul'>
+            <ul style={{
+              display:'flex',
+              justifyContent:'space-around',
+              padding:10,
+            }} id='ul'>
               <a
                 href='https://www.instagram.com/mynykaa/?ref=badge'
                 target='blank'

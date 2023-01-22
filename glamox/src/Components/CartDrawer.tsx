@@ -97,7 +97,7 @@ export const CartDrawer = () => {
     reducer,
     initial
   );
-  console.log(cart)
+  // console.log(cart)
 
   const fetchcartdata=()=>{
     axios({
@@ -105,7 +105,7 @@ export const CartDrawer = () => {
       url:'https://fine-puce-bison-cap.cyclic.app/cart',
     })
     .then((res)=>{
-      console.log(res)
+      // console.log(res)
       setCart(res.data)
     })
     .catch((err)=>{

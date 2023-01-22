@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import styles from "../Styles/BookCard.module.css"
 
 export const BookCard = ({ book }) => {
+  const navigate = useNavigate()
   
   return (
     <div className={styles.prodCard} style={{ border: "1px solid gray" }}>
@@ -17,7 +18,8 @@ export const BookCard = ({ book }) => {
       <p>Rating: {book.rating}</p>
       <p>MRP: ₹{book.price}</p>
       <p>Brand: {book.brand}</p>
-      <button style={{background:"#FC7CB8"}}>Add</button>
+      <button onClick={()=>navigate(`/single/${book.id}`)}
+      style={{background:"#FC7CB8"}}>Add</button>
       
     </div>
   );

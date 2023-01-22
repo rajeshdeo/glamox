@@ -24,11 +24,11 @@ export const BooksList = () => {
         
         _order: order, //acs or desc
       },
-      
     };
     console.log(order);
     dispatch(getBooks(paramObj, cat));
   }, [location.search]);
+  
   return (
     <DivWrapper>
       {books.length > 0 &&

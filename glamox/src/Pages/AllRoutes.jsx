@@ -13,6 +13,7 @@ import { Books } from './Books';
 // import { Home } from './Home';
 import Login from './Login';
 import Signup from './Signup';
+import SingleProduct from './SingleProduct';
 export const AllRoutes = () => {
   return (
     <div>
@@ -30,8 +31,7 @@ export const AllRoutes = () => {
             <Route path="/prodlist" element={<Books/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>
-
-
+            <Route path="/single/:id" element={<SingleProduct/>}/>
         </Routes>
     </div>
   )
