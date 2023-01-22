@@ -1,7 +1,14 @@
 import React from "react";
 import styles from "./FrontPage.module.css";
 import Ncarousel from "./Carousel";
+import { Heading } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
 const FrontPage = () => {
+const navigate=useNavigate()
+
+  const handleClick=()=>{
+navigate("/prodlist")
+  }
   return (
     <div className={styles.front_page_container}>
       <div className={styles.caurosel_part}>
@@ -14,7 +21,7 @@ const FrontPage = () => {
       <h1 className={styles.big}>Biggest PayDay Discounts</h1>
 
       <div className={styles.biggest_day_container}>
-        <div >
+        <div onClick={handleClick}>
           <img className="biggest_day_divs"
             src="https://images-static.nykaa.com/uploads/be8647b2-3b91-4b4b-955f-1106080b8cd7.jpeg?tr=w-240,cm-pad_resize"
             alt="error"
@@ -22,7 +29,7 @@ const FrontPage = () => {
           <h4>Up To 50% Off</h4>
           <h4 className="greycolor">Free Kajal on ₹ 899</h4>
         </div>
-        <div >
+        <div onClick={handleClick}>
           <img className="biggest_day_divs"
             src="https://images-static.nykaa.com/uploads/6eeacc82-a3af-4640-b859-94135bd711ce.jpeg?tr=w-240,cm-pad_resize"
             alt="error"
@@ -30,7 +37,7 @@ const FrontPage = () => {
           <h4>Up To 40% Off</h4>
           <h4 className="greycolor">On Makeup Must-Haves</h4>
         </div>
-        <div >
+        <div onClick={handleClick}>
           <img className="biggest_day_divs"
             src="https://images-static.nykaa.com/uploads/a9129cc1-5601-4e71-a6e5-fe879ae3deba.jpeg?tr=w-240,cm-pad_resize"
             alt="error"
@@ -448,7 +455,7 @@ const FrontPage = () => {
       {/* House of the nykaa ends */}
 
       {/* shop all starts */}
-      <div className={styles.shop_all}>
+      <div className={styles.shop_all} onClick={handleClick}>
         <img
           src="https://images-static.nykaa.com/uploads/0e4e8e7e-af62-4bb1-9f89-f17e45908f12.png?tr=w-1200,cm-pad_resize"
           alt=""

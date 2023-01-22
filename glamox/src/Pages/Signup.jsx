@@ -27,7 +27,7 @@ const Signup = () => {
     <div className={styles.signup_box}>
 
     <div className={styles.signup_main_container}>
-      <h1>Register</h1>
+      <h1 className={styles.reg}>Register</h1>
       <div className={styles.signup_container}>
         <div className={styles.input_space}>
           <input type="text" placeholder="Enter Your Name" ref={name} />
@@ -38,10 +38,10 @@ const Signup = () => {
         <div className={styles.input_space}>
           <input type="password" placeholder="Enter password" ref={password} />
         </div>
-        <button onClick={handleClick}>Sign Up</button>
+        <button className={styles.praButton} onClick={handleClick}>Sign Up</button>
       </div>
       <div className={styles.login_link}>
-            Not a member? <Link to="/login">Login</Link>
+            Already a member? <Link to="/login">Login</Link>
         </div>
     </div>
     </div>

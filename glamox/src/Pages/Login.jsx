@@ -25,7 +25,7 @@ function Login() {
   return (
     <div className={styles.signup_box}>
         <div className={styles.signup_main_container}>
-        <h1>Login</h1>
+        <h1 className={styles.reg}>Login</h1>
       <div className={styles.signup_container}>
         <div className={styles.input_space}>
           <input type="email" placeholder="email" ref={email} />
@@ -33,9 +33,9 @@ function Login() {
         <div className={styles.input_space}>
           <input type="password" placeholder="password" ref={password} />
         </div>
-        <button onClick={handleClick}>Login</button>
-        <div className={styles.login_link}>
-            Already a member? <Link to="/signup">Sign Up</Link>
+        <button className={styles.praButton} onClick={handleClick}>Login</button>
+        <div className="login_link">
+            Not a member? <Link to="/signup">Sign Up</Link>
         </div>
       </div>
         </div>

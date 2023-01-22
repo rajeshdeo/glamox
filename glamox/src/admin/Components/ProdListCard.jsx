@@ -1,4 +1,4 @@
-import styles from '../Styles/ProdCard.css';
+import styles from '../Styles/ProdCard.module.css';
 
 const ProdListCard=(
     {id,image1,title,brand,MRP,price,stock,qty}

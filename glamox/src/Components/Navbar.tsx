@@ -33,22 +33,26 @@ import { NavbarDropdown } from "./NavbarDropdown";
 
 import { useRef } from "react";
 import { CartDrawer } from "./CartDrawer";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const navigate = useNavigate()
 
   return (
-    <Box position={'sticky'} top={'0'} zIndex={5}>
+    <Box position={"sticky"} top={"0"} zIndex={5}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        minH={"80px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        border={'0px'}
+        w={'100%'}
       >
         {/* -----------------------------------Hambrgur menu------------------------------- */}
         <Flex
@@ -67,22 +71,32 @@ export default function Navbar() {
         </Flex>
 
         {/* ---------------------------------Logo & all (Flex-start)----------------------------------------- */}
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md:"flex-start" }} gap={'3'}>
+
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "flex-start" }}
+          gap={"3"}
+          border={'0px'}
+          // w={'50%'}
+        >
           <Image
+            onClick={()=>navigate('/')}
+            cursor={'pointer'}
             w={"7rem"}
             border={"0px"}
+            paddingBottom={"2"}
             src="https://pbs.twimg.com/media/Fmx_u1eacAE13Ob?format=png&name=360x360"
           />
-        {/* </Flex> */}
+          {/* </Flex> */}
           {/*-----------------------------Categories------------------------------------------- */}
           <HStack
             display={{ base: "none", md: "flex" }}
-            align={"center"}           
-            m={'auto'}
+            align={"center"}
+            m={"auto"}
             justifyContent={"space-between"}
             gap={"1"}
             border={"0px"}
-            width={'60%'}
+            width={"60%"}
           >
             {/* <DesktopNav /> */}
             <NavbarDropdown />
@@ -101,25 +115,28 @@ export default function Navbar() {
             {/* <Heading
               _hover={{ color: "pink.400", cursor: "pointer" }}
               size={"sm"}
+              display={{base:'none',lg:'block'}}
             >
               Beauty
             </Heading> */}
           </HStack>
-        </Flex>
+        </Flex >
 
         {/*-------------------- Login/Signup and all (Flex-end)----------------------- */}
         <HStack
+          // paddingRight={'1%'}
           border={"0px"}
-          flex={{ base: 1, md: 0 }}
+          // flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           spacing={2}
-          w={'50%'}
+          w={"45%"}
+          justifyContent={{base:'space-evenly',md:'space-evenly'}}
         >
           <InputGroup
             border={"0px"}
-            width={{ md:'9rem',lg:'15rem'}}
+            width={{ md: "9rem", lg: "15rem" }}
             display={{ base: "none", md: "inline-flex" }}
-            size={'sm'}
+            size={"sm"}
           >
             <InputLeftElement
               pointerEvents="none"
@@ -128,19 +145,25 @@ export default function Navbar() {
             <Input placeholder="Search" width="100%" />
           </InputGroup>
 
-          <Button colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
+
+
+          <Button 
+          onClick={()=>navigate('/login')}
+          colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
+
             Login / Sign Up
           </Button>
           <Button
+            onClick={()=>navigate("/admin")}
             colorScheme="teal"
             variant="outline"
             display={{ base: "none", md: "inline-flex" }}
-           size={'sm'}
+            size={"sm"}
           >
             Admin Login
           </Button>
           {/* <BsBag/>       */}
-          <CartDrawer/>
+          <CartDrawer />
         </HStack>
       </Flex>
 
