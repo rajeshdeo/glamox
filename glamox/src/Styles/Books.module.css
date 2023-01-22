@@ -1,8 +1,11 @@
 .Prod_div{
-    width: 80%;
-    /* border: 1px solid red; */
+    width: 90%;
+    
     padding-top: 3rem;
     margin: auto;
+    font-family: 'Inter', sans-serif;
+    
+    
     
 }
 
@@ -13,6 +16,7 @@
 .SideBar{
     width: 30%;
     text-align: left;
+    
     
 }
 

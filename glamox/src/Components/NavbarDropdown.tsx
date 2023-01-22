@@ -23,8 +23,10 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export const NavbarDropdown = () => {
+  const navigate = useNavigate();
 
   const dropdownData = [
     [
@@ -316,7 +318,7 @@ export const NavbarDropdown = () => {
   ];
 
   const categories = [
-    "Makup",
+    "Makeup",
     "Skin",
     "Hair",
     "Fragrance",
@@ -348,6 +350,10 @@ export const NavbarDropdown = () => {
                 {categories.map((range, index) => {
                   return (
                     <Tab
+                    onClick={()=>{
+                      // {console.log(range)}
+                      {range==="Makeup"&& navigate('/prodlist')}
+                    }}
                       key={index}
                       _focus={{ boxShadow: "none" }}
                       fontSize="md"

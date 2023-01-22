@@ -22,13 +22,12 @@ const editBookSuccess = () => {
   return { type: EDIT_BOOK_SUCCESS };
 };
 
-export const getBooks =
-  (param = {}) =>
+export const getBooks=(param = {}, category) =>
   (dispatch) => {
     dispatch(getBooksRequestAction());
 
     axios
-      .get("https://fine-puce-bison-cap.cyclic.app/makeup", param)
+      .get(`https://fine-puce-bison-cap.cyclic.app/${category}`, param)
       .then((res) => {
         // console.log(res.data)
         dispatch(getBooksSuccessAction(res.data));

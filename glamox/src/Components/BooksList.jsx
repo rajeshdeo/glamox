@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBooks } from "../ReduxStore/AppStore/action";
 import { BookCard } from "./BookCard";
+import styles from "../Styles/Booklist.module.css"
 import styled from "@emotion/styled";
 
 // import styled from "styled-components";
@@ -10,6 +11,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 export const BooksList = () => {
   const dispatch = useDispatch();
   const books = useSelector((store) => store.AppReducer.books);
+  const [cat,setCat] = useState('makeup')
   // console.log(books);
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -26,26 +28,26 @@ export const BooksList = () => {
       
     };
     console.log(order);
-    dispatch(getBooks(paramObj));
+    dispatch(getBooks(paramObj, cat));
   }, [location.search]);
   return (
-    <DivWrapper>
+    <div  className={styles.booklist_div}>
       {books.length > 0 &&
         books.map((el) => {
           return <BookCard key={el.id} book={el} />;
         })}
-    </DivWrapper>
+    </div>
   );
 };
 
-const DivWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-gap: 2rem;
-  text-align: center;
+// const DivWrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(3,1fr);
+//   grid-gap: 2rem;
+//   text-align: center;
   
   
-`;
+// `;
 
 // conditional csss
 

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProdListCard from '../Components/ProdListCard';
-import styles from '../Styles/ProdCard.css';
+import styles from '../Styles/ProdCard.module.css';
 
 const MakeupAd = ()=>{
     const navigate = useNavigate();
