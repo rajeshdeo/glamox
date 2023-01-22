@@ -118,8 +118,10 @@ export const CartDrawer = () => {
   };
 
   const handleQuantity = (index: number, quan: any) => {
+    
     let newquan = Number(quan.target.value);
     console.log(quan.target.value)
+    
     setCart((prev:any) =>
       prev?.map((el:any, i:any) => {
         return i == index ? { ...el, qty: newquan } : { ...el };
