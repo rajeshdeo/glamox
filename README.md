@@ -9,19 +9,19 @@ Glamox : It is an Indian e-commerce company. It sells beauty, wellness and fashi
 
 # Our Team Members:
 
-1. Rajesh Kumar, 
+1. Rajesh Kumar
 
-2. Tejaswi Bishnoi, 
+2. Tejaswi Bishnoi
 
-3. MD Faizan,
+3. MD Faizan
 
-4. Jagroshan,
+4. Jagroshan Singh
 
-5. Deepak Pradhan,
+5. Deepak Pradhan
 
 # Tech Stacks Used for Cloning Website By Us:
 
-HTML, CSS , js, React, TS, ChakraUI, API, JSON-server
+HTML, CSS , JS, React, TS, ChakraUI, API, JSON-server, Redux
 
 
 # Team Work Efforts:
