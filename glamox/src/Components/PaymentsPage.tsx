@@ -30,17 +30,17 @@ import {
 // import { useEffect } from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Alert from "./Alert";
-// import PinModal from "../Components/PinModal";
-//import PinVerificationModal from '../Components/PinVerificationModal'
+import PinModal from "./PinModal";
+
 
 export default function PaymentsPage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const navigate = useNavigate();
 
-   const toast = useToast()
+  const toast = useToast();
 
   const colors = useColorModeValue(
     ["red.50", "teal.50", "blue.50"],
@@ -49,34 +49,31 @@ export default function PaymentsPage() {
   const [tabIndex, setTabIndex] = useState(0);
   const bg = colors[tabIndex];
 
-   let entered:any;
+  let entered: any;
   const random = Math.floor(Math.random() * 10000);
   const handleChange = (el: React.ChangeEvent<HTMLInputElement>) => {
-        entered = el.target.value;
+    entered = el.target.value;
   };
 
   const handleCash = () => {
-        let alertdata = {
-            title: ' Incorrect Capcha',
-            description: "Please try again",
-            status: 'warning',
-  }
+    let alertdata = {
+      title: " Incorrect Capcha",
+      description: "Please try again",
+      status: "warning",
+    };
 
-  //     if (random != entered) toast(Alert(alertdata))
-  //     else navigate('/paymentdone')
-    if(random!=entered) toast(Alert(alertdata))
-    else navigate('/successpayment')
-  }
-    
-
-  const handlePayment = () => {
-    //     onOpen()
+    if (random != entered) toast(Alert(alertdata));
+    else navigate("/successpayment");
   };
 
-  // const handlePin = () => {
-  //     onClose();
-  //     navigate('/loader')
-  // }
+  const handlePayment = () => {
+    onOpen();
+  };
+
+  const handlePin = () => {
+    onClose();
+    navigate("/loader");
+  };
 
   return (
     <div style={{ margin: "5%" }}>
@@ -96,9 +93,9 @@ export default function PaymentsPage() {
         </TabList>
         <TabPanels>
           <TabPanel>
-          <VStack>
-            <Heading size="md">Pay on delivery (Cash/UPI)</Heading>
-            
+            <VStack>
+              <Heading size="md">Pay on delivery (Cash/UPI)</Heading>
+
               <Text>Capcha</Text>
               <Text border="1px solid" padding="2%" as="s">
                 {random}
@@ -151,7 +148,12 @@ export default function PaymentsPage() {
         </TabPanels>
       </Tabs>
 
-      {/* <PinModal handlePin={handlePin} isOpen={isOpen} onClose={onClose} device={'mobile number'}/> */}
+      <PinModal
+        handlePin={handlePin}
+        isOpen={isOpen}
+        onClose={onClose}
+        device={"mobile number"}
+      />
     </div>
   );
 }

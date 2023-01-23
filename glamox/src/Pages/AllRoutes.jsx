@@ -16,13 +16,14 @@ import Signup from './Signup';
 import SingleProduct from './SingleProduct';
 import LoginAdmin from './LoginAdmin';
 import PrivateRoute from '../Components/PrivateRoute';
+import LoaderPage from '../Components/LoaderPage';
 export const AllRoutes = () => {
   return (
     <div>
         <Routes>
             {/* <Route path ="/" element={<Home />}/> */}
             <Route path ="/" element={<FrontPage />}/>
-
+            <Route path='/loader' element={<LoaderPage/>}/>
             <Route path="/payments" element={<PaymentsPage/>}/>
             <Route path="/successpayment" element={<SuccessPayment/>}/>
             <Route path ="/admin" element={<PrivateRoute><HomeAd/></PrivateRoute>}/>
