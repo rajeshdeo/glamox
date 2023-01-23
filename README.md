@@ -21,7 +21,7 @@ Glamox : It is an Indian e-commerce company. It sells beauty, wellness and fashi
 
 # Tech Stacks Used for Cloning Website By Us:
 
-HTML, CSS , js, React, ChakraUI, API, JSON-server
+HTML, CSS , js, React, TS, ChakraUI, API, JSON-server
 
 
 # Team Work Efforts:
