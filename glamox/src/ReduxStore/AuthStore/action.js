@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 import { LOGIN_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS } from './actionType';
 
 
@@ -21,7 +22,7 @@ const loginErr = ()=>{
 }
 
 function getLogin(userData){
-
+    // const auth= useSelector((store)=>store.AuthReducer.isAuth)
     return function(dispatch){
         dispatch(loginReq())
         return(

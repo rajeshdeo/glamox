@@ -34,10 +34,13 @@ import { NavbarDropdown } from "./NavbarDropdown";
 import { useRef } from "react";
 import { CartDrawer } from "./CartDrawer";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const navigate = useNavigate()
+  // let auth:any = useSelector((store)=>store.AuthReducer.isAuth);
+  // console.log(auth)
 
   return (
     <Box position={"sticky"} top={"0"} zIndex={5}>
@@ -150,7 +153,6 @@ export default function Navbar() {
           <Button 
           onClick={()=>navigate('/login')}
           colorScheme="pink" as={"a"} variant={"solid"} href={"#"} size={'sm'}>
-
             Login / Sign Up
           </Button>
           <Button

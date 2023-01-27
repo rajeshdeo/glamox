@@ -9,6 +9,7 @@ const AdminNav=()=>{
             <button onClick={()=>navigate('/skinAd')}>Skin</button>
             <button onClick={()=>navigate('/hairAd')}>Hair</button>
             <button onClick={()=>navigate('/makeupAd')}>Admin Home</button>
+            <button onClick={()=>navigate('/adlogin')}>Logout Admin</button>
         </div>
     </div>
 }

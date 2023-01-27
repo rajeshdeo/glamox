@@ -9,26 +9,39 @@ import styled from "@emotion/styled";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 export const BooksList = () => {
-  const dispatch = useDispatch();
   const books = useSelector((store) => store.AppReducer.books);
-  const [cat,setCat] = useState('makeup')
-  // console.log(books);
+  const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const [cat,setCat] = useState('makeup')
 
-  useEffect(() => {
-    const order = searchParams.get("order");
-    let paramObj = {
-      params: {
-        brand: searchParams.getAll("brand"),
-        _sort: order ,
+  // useEffect(() => {
+  //   const order = searchParams.get("order");
+  //   let paramObj = {
+  //     params: {
+  //       brand: searchParams.getAll("brand"),
+  //       _sort: order ,
         
-        _order: order, //acs or desc
-      },
-    };
-    console.log(order);
-    dispatch(getBooks(paramObj, cat));
-  }, [location.search]);
+  //       _order: order, //acs or desc
+  //     },
+  //   };
+  //   console.log(order);
+  //   dispatch(getBooks(paramObj, cat));
+  // }, [location.search]);
+
+  useEffect(()=>{
+    if(location || books.length===0){
+        const sortBy = searchParams.get('sort');
+        const getBooksParams = {
+            params: {
+                brand: searchParams.getAll('brand'),
+                _sort: sortBy && 'price',
+                _order: sortBy,
+            },
+        };
+        dispatch(getBooks(getBooksParams, cat))
+    }
+},[location.search]);
   
   return (
     <div  className={styles.booklist_div}>

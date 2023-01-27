@@ -1,8 +1,12 @@
 import { useRef } from "react";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../sytles/Login.module.css"
 
 function Login() {
+  let auth = useSelector((store)=>store.AuthReducer.isAuth);
+  // console.log(auth);
+
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate();
@@ -16,7 +20,10 @@ function Login() {
       password.current.value === localPassword
     ) {
       // console.log(name.current.value,email.current.value,password.current.value)
+      auth = !auth;
+      console.log(auth)
       navigate("/");
+
     } else {
       alert("fill correct  details");
     }

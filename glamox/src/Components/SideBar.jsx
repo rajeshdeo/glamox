@@ -4,19 +4,14 @@ import styles from "../Styles/Sidebar.module.css"
 
 export const SideBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialState = searchParams.getAll("brand");
-  const initialOrder = searchParams.get("order");
-  const [brand, setBrand] = useState(initialState || []); 
-  const [order, setOrder] = useState(initialOrder || "");
+    const initialBrand = searchParams.getAll('brand');
+    const initialSort = searchParams.get('sort');
+    const [brand, setBrand] = useState(initialBrand || []);
+    const [sort, setSort] = useState(initialSort || '');
 
   const handleFilter = (e) => {
-    let newCategory = [...brand]; //[motivational, novel]
-    // If a user changes any category it should be stored in state
-    // If the category is already present pop out of the state
-
-    // arr = [1,2,3,4,5]
-    // arr.splice(arr.indexOf(3),1); arr.indexOf(el)
-
+    let newCategory = [...brand]; 
+    
     if (newCategory.includes(e.target.value)) {
       //filter
       //splice, slice
@@ -28,16 +23,27 @@ export const SideBar = () => {
   };
 
   const handleSort = (e) => {
-    setOrder(e.target.value);
+    setSort(e.target.value);
   };
 
-  useEffect(() => {
-    const params = {
-      brand,
-    };
-    order && (params.order = order);
-    setSearchParams(params);
-  }, [brand, order]);
+  // useEffect(() => {
+  //   const params = {
+  //     brand,
+  //   };
+
+  //   sort && (params.sort = sort);
+  //   setSearchParams(params);
+
+  // }, [brand, sort, setSearchParams]);
+
+  useEffect(()=>{
+    if(brand || sort){
+        let params={};
+        brand && (params.brand = brand)
+        sort && (params.sort = sort)
+        setSearchParams(params)
+    }
+},[brand, setSearchParams, sort]);
 
   return (
     <div className={styles.sidebar_div}>
@@ -61,25 +67,6 @@ export const SideBar = () => {
         />
         <label className={styles.label}>Loreal</label>
       </div>
-      {/* <div>
-        <input
-          type="checkbox"
-          value="Thriller"
-          onChange={handleFilter}
-          checked={category.includes("Thriller")}
-        />
-        <label>Thriller</label>
-      </div> */}
-      {/* <div>
-        <input
-          type="checkbox"
-          value="Science_Fiction"
-          onChange={handleFilter}
-          checked={category.includes("Science_Fiction")}
-        />
-        <label>Science Fiction</label>
-      </div> */}
-
       
       <h3 className={styles.sortByPrice}>Sort By Price</h3>
 
@@ -89,19 +76,20 @@ export const SideBar = () => {
             onChange={handleSort}
             className={styles.radio_btn}
             type="radio"
-            name="sort_by"
-            value={"asc"}
-            defaultChecked={order === "asc"}
+            name="sortBy"
+            value={"desc"}
+            defaultChecked={sort === "desc"}
           />
           <label className={styles.radio_label}>High to Low</label>
         </div>
 
         <div className={styles.sortBoxIn}>
           <input className={styles.radio_btn}
+            onChange={handleSort}
             type="radio"
-            name="sort_by"
-            value={"desc"}
-            defaultChecked={order === "desc"}
+            name="sortBy"
+            value={"asc"}
+            defaultChecked={sort === "asc"}
           />
           <label className={styles.radio_label}>Low to High</label>
         </div>
