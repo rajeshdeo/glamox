@@ -1,6 +1,6 @@
 import {
   CART_ADD,
-  CART_PRICE,
+  CART_EMPTY,
   CART_QUANTITY,
   CART_REMOVE,
 } from "./actionTypes";
@@ -18,8 +18,8 @@ const quantityCart = (index:any,el:any) => {
   return { type: CART_QUANTITY, payload:[index,+el] };
 };
 
-const priceCart = (payload: any) => {
-  return { type: CART_PRICE, payload };
+const emptyCart = () => {
+  return { type: CART_EMPTY };
 };
 
-export {addCart,removeCart,quantityCart,priceCart}
+export {addCart,removeCart,quantityCart,emptyCart}

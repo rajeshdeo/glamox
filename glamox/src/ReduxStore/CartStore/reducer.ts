@@ -1,6 +1,6 @@
 import {
   CART_ADD,
-  CART_PRICE,
+  CART_EMPTY,
   CART_QUANTITY,
   CART_REMOVE,
 } from "./actionTypes";
@@ -24,8 +24,7 @@ export const reducer = (state = initial, action: any) => {
       return state.filter((el: any, i: any) => i != action.payload);
     case CART_QUANTITY:
       return state.map((item:any,i:any)=>{return i == action.payload[0] ? { ...item, qty: action.payload[1] } : { ...item }})
-    case CART_PRICE:
-      return state;
+    case CART_EMPTY: return state=[];
     default:
       return state;
   }

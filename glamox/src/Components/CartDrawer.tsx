@@ -264,7 +264,9 @@ export const CartDrawer = () => {
                 onClick={() => {
                   onClose();
                   navigate("/payments");
+                
                 }}
+                isDisabled={cart.length==0?true:false}
               >
                 Proceed
               </Button>

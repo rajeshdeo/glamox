@@ -7,14 +7,16 @@ import styled from "@emotion/styled";
 
 // import styled from "styled-components";
 import { useLocation, useSearchParams } from "react-router-dom";
+import { Skeleton } from "@chakra-ui/react";
 
 export const BooksList = () => {
-  const books = useSelector((store) => store.AppReducer.books);
+  const {books,isLoading} = useSelector((store) => store.AppReducer);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const [cat,setCat] = useState('makeup')
 
+  //console.log(isLoading)
   // useEffect(() => {
   //   const order = searchParams.get("order");
   //   let paramObj = {
@@ -46,9 +48,10 @@ export const BooksList = () => {
   return (
     <div  className={styles.booklist_div}>
       {books.length > 0 &&
-        books.map((el) => {
-          return <BookCard key={el.id} book={el} />;
-        })}
+        books.map((el) =>
+          isLoading? <Skeleton height='70vh' />:
+          <BookCard key={el.id} book={el} />
+        )}
     </div>
   );
 };
