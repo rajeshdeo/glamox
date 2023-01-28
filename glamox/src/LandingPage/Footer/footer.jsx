@@ -12,7 +12,7 @@ export const Footer = () => {
         <div class='flex container'>
           <div>
             <div>
-              <img src='https://i.imgur.com/inALoaR.png' alt='' id='nykka' />
+              {/* <img src='https://i.imgur.com/inALoaR.png' alt='' id='nykka' /> */}
             </div>
             <a href=''>Who are we?</a>
             <a href=''>Careers</a>
