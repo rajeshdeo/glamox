@@ -416,7 +416,7 @@ navigate("/prodlist")
       <br />
       <br />
       {/* House of the nykaa starts*/}
-      <h1 className={styles.big}>House of the Nykaa</h1>
+      <h1 className={styles.big}>House of the Glamox</h1>
       <div className={styles.house_nykaa}>
         <div>
           <img

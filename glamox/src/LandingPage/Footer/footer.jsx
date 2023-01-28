@@ -18,7 +18,7 @@ export const Footer = () => {
             <a href=''>Careers</a>
             <a href=''>Authenticity</a>
             <a href=''>Testimonials</a>
-            <a href=''>Nykaa CSR</a>
+            <a href=''>Glamox CSR</a>
             <a href=''>Responsible Disclosure</a>
             <a href=''>Investor Relations</a>
           </div>
@@ -30,23 +30,23 @@ export const Footer = () => {
             <a href=''>Store Locator</a>
             <a href=''>Cancellation & Return</a>
             <a href=''>Shipping & Delivery</a>
-            <a href=''>Sell on Nykaa</a>
+            <a href=''>Sell on Glamox</a>
           </div>
           <div>
             <div>Inspire Me</div>
             <a href=''>Beauty Book</a>
-            <a href=''>Nykaa TV</a>
-            <a href=''>Nykaa Network</a>
+            <a href=''>Glamox TV</a>
+            <a href=''>Glamox Network</a>
             <a href=''>Buying Guides</a>
           </div>
           <div>
             <div>Quick Links</div>
             <a href=''> Offer Zone</a>
             <a href=''>New Launchesr</a>
-            <a href=''>Nykaa Man</a>
-            <a href=''>Nykaa Fashion</a>
-            <a href=''>Nykaa Pro</a>
-            <a href=''>Nykaa femina beauty awards winners 2019</a>
+            <a href=''>Glamox Man</a>
+            <a href=''>Glamox Fashion</a>
+            <a href=''>Glamox Pro</a>
+            <a href=''>Glamox femina beauty awards winners 2019</a>
             <a href=''>Sitemap</a>
           </div>
           <div>
@@ -154,7 +154,7 @@ export const Footer = () => {
           <a href=''>Terms & Conditions</a>
         </div>
         <div>
-          <p>© 2023 Nykaa E-Retail Pvt. Ltd. All Rights Reserved.</p>
+          <p>© 2023 Glamox E-Retail Pvt. Ltd. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
