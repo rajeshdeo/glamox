@@ -58,19 +58,19 @@ HTML, CSS , JS, React, TS, Redux, ChakraUI, API, JSON-server
 
 First we created a Slack and WhatsApp group to establish communication between all the team members. Then we connected over zoom meet for further discussion about assigned project.
 
-In zoom meet we divideed small parts of project to all the team-mates, next all are collecting raw data for project which content is better to merge and easy to complete work.
+In zoom meet we divideed small parts of project to all the team-member, next all are collecting raw data for project which content is better to merge and easy to complete work.
 
-Daily we connect a meet after scrum then discuss about past days work and that present days work, any one have issue all the team helps to solve the bug.
+Daily we connect a meet after scrum then discuss about past days work and that day work, any one have issue all the team member helps to solve the problem.
 
-Finally all push the data to Git hub main branch and do backend of this project, lot more changes will be occur .
+All push the data in Git-hub to their respective branch and merge to main branch.
 
-Complete given project works after we talk about presentation part of our project ,and we all are efforts goes to final result then we submit Successfully our project with our team efforts.
+Finally we make the presentation of the project.
 
 
 # What We Learned From this project?
 
--We all became proficient in understanding the code of team members
--How to work and communicate with a team
+-We all became proficient in understanding the code of the team members.
+-How to work and communicate with a team.
 -Implementation of Redux in a full fledged e-com website
 -Using different react hooks to enhance quality of code
 -Integrating TypeScipt in a normal ReactJs project.
