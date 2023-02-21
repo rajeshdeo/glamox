@@ -1,6 +1,6 @@
 # Construct Week of Unit-5 | Project-Glamox
 
-Hello Everyone, We've developed a cosmetic e-com website **Glamox**. Currently, we are pursuing the Full Stack Web Development course at Masai School.
+Hello Everyone, We've developed a cosmetic e-comm website **Glamox**. Currently, we are pursuing the Full Stack Web Development course at Masai School.
 
 
 
@@ -20,9 +20,38 @@ Glamox : It is an Indian e-commerce cosmetics company. It sells beauty, wellness
 
 5. Deepak Pradhan
 
-# Tech Stacks Used for Cloning Website By Us:
+# Tech stacks used :
 
-HTML, CSS , JS, React, TS, ChakraUI, API, JSON-server, Redux
+HTML, CSS , JS, React, TS, Redux, ChakraUI, API, JSON-server
+
+
+
+# Some images of the project :
+
+## 1. Home
+ ![Screenshot (516)](https://user-images.githubusercontent.com/112768622/220413059-84961443-166a-47d8-926b-8c801a12ff8f.png)
+
+## 2. Login
+![Screenshot (517)](https://user-images.githubusercontent.com/112768622/220413153-e0299f40-74e4-4b4c-9696-bede10c3c535.png)
+
+## 3. Sign up
+![Screenshot (518)](https://user-images.githubusercontent.com/112768622/220413209-b24cfb76-c55f-4f8d-a0ec-568273ec213a.png)
+
+## 4. Body
+![Screenshot (519)](https://user-images.githubusercontent.com/112768622/220413293-f2807705-8d53-450b-8086-bce234d17399.png)
+
+
+## 5. Footer
+
+
+![Screenshot (520)](https://user-images.githubusercontent.com/112768622/220413411-71488445-74c9-47e2-bfa9-b3832a4afa2b.png)
+
+
+
+
+
+
+
 
 
 # Team Work Efforts:
