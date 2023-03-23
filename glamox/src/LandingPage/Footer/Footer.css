@@ -34,17 +34,19 @@
   text-decoration: none;
   display: block;
   margin-top: 15px;
-  font-size: 13px;
-  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-family: Inter;
   line-height: 16px;
 }
 #footer1 a:hover {
-  color: #fc2779;
+  color: #f0337c;
+  font-family: Inter;
 }
 #footer1 > div > div > div {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 30px;
+  font-family: Inter;
 }
 
 /* -------------footer2-------------- */

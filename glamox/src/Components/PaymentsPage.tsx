@@ -29,6 +29,7 @@ import {
 } from "@chakra-ui/react";
 // import { useEffect } from "react";
 import { useState } from "react";
+
 import { Navigate } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom";
 import Alert from "./Alert";
@@ -56,17 +57,25 @@ export default function PaymentsPage() {
   };
 
   const handleCash = () => {
+    
     let alertdata = {
       title: " Incorrect Capcha",
       description: "Please try again",
-      status: "warning",
+      status: "error",
     };
-
+    if(random == entered){
+  
+    }
     if (random != entered) toast(Alert(alertdata));
-    else navigate("/successpayment");
+    else navigate("/successpayment") ;
   };
 
+  
+
   const handlePayment = () => {
+    
+   
+    
     onOpen();
   };
 
@@ -112,7 +121,7 @@ export default function PaymentsPage() {
                 You can pay via Cash or UPI enabled app at the time of delivery.
                 Ask your delivery executive for these options.
               </Text>
-              <Button bg="red.500" onClick={handleCash}>
+              <Button bg="#d53f8c" color={'white'} onClick={handleCash}>
                 PLACE ORDER
               </Button>
             </VStack>
@@ -121,7 +130,7 @@ export default function PaymentsPage() {
             <VStack>
               <Heading size="md">UPI ID</Heading>
               <Input placeholder="Enter your UPI ID here" />
-              <Button bg="red.500" onClick={handlePayment}>
+              <Button bg="#d53f8c" color={'white'} onClick={handlePayment}>
                 PLACE ORDER
               </Button>
             </VStack>
@@ -140,7 +149,7 @@ export default function PaymentsPage() {
                   <Input placeholder="CVV" type="number" />
                 </HStack>
               </VStack>
-              <Button bg="red.500" onClick={handlePayment}>
+              <Button bg="#d53f8c" color={'white'} onClick={handlePayment}>
                 PLACE ORDER
               </Button>
             </VStack>

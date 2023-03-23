@@ -352,7 +352,9 @@ export const NavbarDropdown = () => {
                     <Tab
                     onClick={()=>{
                       // {console.log(range)}
-                      {range==="Makeup"&& navigate('/prodlist')}
+                      {range==="Makeup"&& navigate('/prodlist/makeup')}
+                      {range==="Skin"&& navigate('/prodlist/skin')}
+                      {range==="Hair"&& navigate('/prodlist/hair')}
                     }}
                       key={index}
                       _focus={{ boxShadow: "none" }}

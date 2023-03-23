@@ -31,11 +31,12 @@ export const AllRoutes = () => {
             <Route path="/hairAd" element={<HairAd/>}/>
             <Route path="/skinAd" element={<SkinAd/>}/>
             <Route path="/add" element={<AddProduct/>}/>
-            <Route path="/prodlist" element={<Books/>}/>
+            <Route path="/prodlist/:category" element={<Books/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/adlogin" element={<LoginAdmin/>}/>
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="/single/:id" element={<SingleProduct/>}/>
+            <Route path="/:category/:P_id" element={<SingleProduct/>}/>
+            
         </Routes>
     </div>
   )

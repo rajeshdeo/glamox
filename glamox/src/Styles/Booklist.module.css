@@ -1,6 +1,6 @@
 .booklist_div{
     display: grid;
-    
+    background-color: white;
     grid-template-columns: repeat(3,1fr);
     gap: 2rem;
     justify-content: center;
@@ -9,3 +9,8 @@
     
 }
 
+
+.SearchDiv input {
+    outline: none;
+    
+}
