@@ -9,12 +9,6 @@ import { addCart } from "../ReduxStore/CartStore/acton";
 
 import { useDispatch, useSelector } from "react-redux";
 
-
-
-
-// import styled from "styled-components";
-
-
 import { SearchIcon } from "@chakra-ui/icons";
 import Alert from "../Components/Alert";
 
