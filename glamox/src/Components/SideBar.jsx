@@ -61,11 +61,65 @@ export const SideBar = () => {
       <div>
         <input className={styles.brand_checkbox}
           type="checkbox"
+          value="Glamox"
+          onChange={handleFilter}
+          checked={brand.includes("Glamox")}
+        />
+        <label className={styles.label}>Glamox</label>
+      </div>
+      <div>
+        <input className={styles.brand_checkbox}
+          type="checkbox"
           value="Loreal"
           onChange={handleFilter}
           checked={brand.includes("Loreal")}
         />
         <label className={styles.label}>Loreal</label>
+      </div>
+      <div>
+        <input className={styles.brand_checkbox}
+          type="checkbox"
+          value="PAC"
+          onChange={handleFilter}
+          checked={brand.includes("PAC")}
+        />
+        <label className={styles.label}>PAC</label>
+      </div>
+      <div>
+        <input className={styles.brand_checkbox}
+          type="checkbox"
+          value="MyGlamm"
+          onChange={handleFilter}
+          checked={brand.includes("MyGlamm")}
+        />
+        <label className={styles.label}>MyGlamm</label>
+      </div>
+      <div>
+        <input className={styles.brand_checkbox}
+          type="checkbox"
+          value="Kay Beauty"
+          onChange={handleFilter}
+          checked={brand.includes("Kay Beauty")}
+        />
+        <label className={styles.label}>Kay Beauty</label>
+      </div>
+      <div>
+        <input className={styles.brand_checkbox}
+          type="checkbox"
+          value="Mabellin New York"
+          onChange={handleFilter}
+          checked={brand.includes("Mabellin New York")}
+        />
+        <label className={styles.label}>Mabellin New York</label>
+      </div>
+      <div>
+        <input className={styles.brand_checkbox}
+          type="checkbox"
+          value="NIVEA"
+          onChange={handleFilter}
+          checked={brand.includes("NIVEA")}
+        />
+        <label className={styles.label}>NIVEA</label>
       </div>
       
       <h3 className={styles.sortByPrice}>Sort By Price</h3>

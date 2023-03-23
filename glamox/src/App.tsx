@@ -8,7 +8,7 @@ import { Display } from './Display';
 function App() {
   
   return (
-    <div>
+    <div style={{background:"#F5F5F5"}}>
         <Display />
     </div>
   );

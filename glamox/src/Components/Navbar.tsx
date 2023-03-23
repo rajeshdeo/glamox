@@ -45,8 +45,8 @@ export default function Navbar() {
   return (
     <Box position={"sticky"} top={"0"} zIndex={5}>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={useColorModeValue("white", "gray.900")}
+        color={useColorModeValue("gray.900", "white")}
         minH={"80px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -104,7 +104,7 @@ export default function Navbar() {
             {/* <DesktopNav /> */}
             <NavbarDropdown />
             <Heading
-              _hover={{ color: "pink.400", cursor: "pointer" }}
+              _hover={{ color: "pink.400", cursor: "pointer",fontFamily:"Inter" }}
               size={"sm"}
             >
               Brand
@@ -113,7 +113,19 @@ export default function Navbar() {
               _hover={{ color: "pink.400", cursor: "pointer" }}
               size={"sm"}
             >
-              Fashion
+              Glamox Fashion
+            </Heading>
+            <Heading
+              _hover={{ color: "pink.400", cursor: "pointer" }}
+              size={"sm"}
+            >
+              Luxe
+            </Heading>
+            <Heading
+              _hover={{ color: "pink.400", cursor: "pointer" }}
+              size={"sm"}
+            >
+              Beauty Advice
             </Heading>
             {/* <Heading
               _hover={{ color: "pink.400", cursor: "pointer" }}
@@ -140,12 +152,16 @@ export default function Navbar() {
             width={{ md: "9rem", lg: "15rem" }}
             display={{ base: "none", md: "inline-flex" }}
             size={"sm"}
+            gap={5}
           >
             <InputLeftElement
               pointerEvents="none"
-              children={<SearchIcon color="gray.300" />}
+              justifyContent={"center"}
+              
+              
+              children={<SearchIcon  color="gray.500" />}
             />
-            <Input placeholder="Search" width="100%" />
+            <Input  placeholder="Search on Glamox" width="100%"  borderRadius={'5'} background={'pink.50'} border='1px' borderColor='gray.200'/>
           </InputGroup>
 
 

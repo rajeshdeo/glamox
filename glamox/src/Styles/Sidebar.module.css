@@ -38,11 +38,15 @@
 .sortByPrice{
     margin-top: 2rem;
 }
-.sidebar_div>div{
+.sidebar_div >div{
+    display: flex;
+    flex-direction: row;
     padding: 0.1rem;
     background-color: 	 #ffcce0;
-    margin-top: 0.1rem;
-    justify-content: center;
+    margin-top: 0.7rem;
+    align-items: center;
+    justify-content: flex-start;
+    
 }
 .sortBox{
     display: flex;

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useParams, useSearchParams } from "react-router-dom";
 import {
   EDIT_BOOK_SUCCESS,
   GET_BOOKS_FAILURE,
@@ -22,12 +23,15 @@ const editBookSuccess = () => {
   return { type: EDIT_BOOK_SUCCESS };
 };
 
+
+
 export const getBooks=(param = {}, category) =>
+
   (dispatch) => {
     dispatch(getBooksRequestAction());
 
     axios
-      .get(`https://fine-puce-bison-cap.cyclic.app/${category}`, param)
+      .get(`https://trends-api.onrender.com/${category}`, param)
       .then((res) => {
         // console.log(res.data)
         dispatch(getBooksSuccessAction(res.data));

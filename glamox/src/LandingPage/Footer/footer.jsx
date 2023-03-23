@@ -7,7 +7,7 @@ import twitterWithCircle from "@iconify/icons-entypo-social/twitter-with-circle"
 import pinterestFill from "@iconify/icons-akar-icons/pinterest-fill";
 export const Footer = () => {
   return (
-    <div style={{ marginTop: "30px" }}>
+    <div style={{ marginTop: "30px",fontFamily:"Inter" }}>
       <footer id='footer1'>
         <div class='flex container'>
           <div>
@@ -23,7 +23,7 @@ export const Footer = () => {
             <a href=''>Investor Relations</a>
           </div>
           <div>
-            <div>Help</div>
+            <div><p style={{fontFamily:""}}>Help</p></div>
             <a href=''>Contact Us</a>
             <a href=''>Careers</a>
             <a href=''>Frequently asked questions</a>
