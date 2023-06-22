@@ -47,7 +47,7 @@ const AddProduct = ()=>{
     }
 
     const addProd= async(res)=>{
-        await axios.post(`https://fine-puce-bison-cap.cyclic.app/${category}`,res,
+        await axios.post(`https://wild-ruby-hermit-crab-tam.cyclic.app/${category}`,res,
         {headers:{"Content-Type" : "application/json"}}).then((r)=>{
             setDisplay(`Product Added Succesfully to ${category}`)
             // console.log(r.response.data)

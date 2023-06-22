@@ -14,7 +14,7 @@ const SkinAd = ()=>{
     
 
     const getFunc=()=>{
-        let res = axios.get('https://fine-puce-bison-cap.cyclic.app/skin').then((r)=>{
+        let res = axios.get('https://wild-ruby-hermit-crab-tam.cyclic.app/skin').then((r)=>{
             setData(r.data);
             setLoading(!loading)
             // console.log(r.data);

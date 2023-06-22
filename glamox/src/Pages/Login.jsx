@@ -25,7 +25,7 @@ function Login() {
       navigate("/");
 
     } else {
-      alert("fill correct  details");
+      alert("Fill correct details");
     }
   };
 
@@ -41,7 +41,7 @@ function Login() {
           <input type="password" placeholder="password" ref={password} />
         </div>
         <button className={styles.praButton} onClick={handleClick}>Login</button>
-        <div className="login_link">
+        <div className={styles.login_link}>
             Not a member? <Link to="/signup">Sign Up</Link>
         </div>
       </div>

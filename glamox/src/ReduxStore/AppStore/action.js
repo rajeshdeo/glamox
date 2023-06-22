@@ -29,9 +29,9 @@ export const getBooks=(param = {}, category) =>
 
   (dispatch) => {
     dispatch(getBooksRequestAction());
-
+//https://trends-api.onrender.com
     axios
-      .get(`https://trends-api.onrender.com/${category}`, param)
+      .get(`https://wild-ruby-hermit-crab-tam.cyclic.app/${category}`, param)
       .then((res) => {
         // console.log(res.data)
         dispatch(getBooksSuccessAction(res.data));
@@ -42,7 +42,7 @@ export const getBooks=(param = {}, category) =>
   };
 
 export const editBook = (id, bookData) => (dispatch) => {
-  return axios.patch(`https://fine-puce-bison-cap.cyclic.app/makeup/${id}`, bookData).then(() => {
+  return axios.patch(`https://wild-ruby-hermit-crab-tam.cyclic.app/makeup/${id}`, bookData).then(() => {
     dispatch(editBookSuccess());
   });
 };

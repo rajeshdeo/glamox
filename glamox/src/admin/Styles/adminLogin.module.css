@@ -5,11 +5,13 @@
     display: flex;
     justify-content: center;
     gap: 30px;
+    color:black;
 }
 .heading h1{
     text-align: center;
     font-size: 35px;
     margin-bottom: 20px;
+    color:black;
 }
 .inputBox{
     border: 1px solid #ddd;
@@ -55,11 +57,13 @@
     padding: 10px;
     border-radius: 8px;
     overflow: hidden;
+    background-color: #9b999a;
 }
 .imageInputBox{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    
+    align-items: center;
+    color:black;
     gap: 10px;
     border-radius: 5px;
     padding: 5px;

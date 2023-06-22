@@ -13,7 +13,7 @@ const MakeupAd = ()=>{
     
 
     const getFunc=()=>{
-        let res = axios.get('https://fine-puce-bison-cap.cyclic.app/makeup').then((r)=>{
+        let res = axios.get('https://wild-ruby-hermit-crab-tam.cyclic.app/makeup').then((r)=>{
             setData(r.data);
             setLoading(!loading)
             // console.log(r.data);

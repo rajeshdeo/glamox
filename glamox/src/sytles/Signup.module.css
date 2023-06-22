@@ -4,15 +4,17 @@
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 450px;
     background:white;
     border-radius: 5%;
+    padding: 20px;
 
 }
 .signup_main_container h1{
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid silver;
+    color: black;
 
 }
 .input_space{
@@ -22,11 +24,11 @@
 }
 .input_space input{
     width: 100%;
-    padding: 0 5px;
+    padding: 5px;
     height: 40px;
     font-size: 16px;
     border: none;
-    background: none;
+    background: rgb(133, 130, 130);
     outline: none;
 
 }

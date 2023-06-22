@@ -5,6 +5,7 @@
   background-color: #8c8d94;
   border: none;
   box-shadow: none;
+  font-size: 20px;
 }
 .container > div {
   width: 17%;
@@ -113,4 +114,8 @@
   margin-right: 2%;
   font-weight: 500;
   
+}
+
+a{
+  font-size: 20px;
 }

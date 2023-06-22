@@ -27,14 +27,15 @@
     position: relative;
     border-bottom: 2px solid #adadad;
     margin: 30px 0;
+    background-color: white;
 }
 .input_space input{
     width: 100%;
     padding: 0 5px;
     height: 40px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
-    background: none;
+    background: rgb(184, 182, 179);
     outline: none;
 
 }
@@ -75,5 +76,11 @@
   .reg{
     font-size: 35px;
     font-weight: 500;
+    color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input{
+    background-color: #666666;
+    color:black
 }

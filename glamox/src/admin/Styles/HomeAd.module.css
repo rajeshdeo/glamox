@@ -5,11 +5,13 @@
     display: flex;
     justify-content: center;
     gap: 30px;
+    color:black
 }
 .heading h1{
     text-align: center;
     font-size: 35px;
     margin-bottom: 20px;
+    color:black
 }
 
 .buttonBox{
@@ -17,6 +19,7 @@
     height: 8vh;
     font-size: 25px;
     margin:auto;
+    color:black;
     /* border:1px solid #ddd; */
     padding:10;
     display:flex;
@@ -27,6 +30,7 @@
     border: 1px solid #ddd;
     width: 250px;
     border-radius: 8px;
+    color:black;
 }
 .buttonBox button:hover{
     background-color: rgb(248, 237, 245);
@@ -59,9 +63,11 @@
     flex-direction: column;
     gap: 20px;
     padding: 5px;
+    color:black;
 }
 .DashImgBox h3, .DashDataCont h2{
     font-size: 30px;
+    color:black;
 }
 .imgDiv{
     height: 50px;
@@ -77,4 +83,7 @@
     border: 1px solid #ddd;
     text-align: center;
     border-radius: 10px;
+}
+h1{
+    color:black;
 }

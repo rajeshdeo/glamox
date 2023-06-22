@@ -332,7 +332,7 @@ export const NavbarDropdown = () => {
     // <Flex justifyContent="center" mt={4}>
       <Popover placement={"auto"} isLazy trigger="hover">
         <PopoverTrigger>
-          <Heading _hover={{color:'pink.400',cursor:'pointer'}} size={'sm'}>
+          <Heading _hover={{color:'pink.400',cursor:'pointer'}} size={'md'}>
             Categories
           </Heading>
         </PopoverTrigger>

@@ -1,14 +1,21 @@
+body{
+  color:black;
+}
+
+
 .heading{
     text-align: center;
     font-size: 35px;
     margin-bottom: 20px;
+    color:black;
 }
 .tableContainer{
   width:95%;
   margin:auto;
+  color:black;
   margin-top: 40px;
   margin-bottom:5vh;
-  border:1px solid #ddd;
+  border:1px solid #424242;
   height:100vh;
   display:flex;
   justify-content:space-around;
@@ -16,6 +23,7 @@
 }
 .tableBox{
   width:73%;
+  color:black;
   margin:auto;
   border:1px solid #ddd;
   height:80%;
@@ -31,6 +39,7 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    color:black;
 }
   
 tr:nth-child(even) {
@@ -61,6 +70,7 @@ tr td{
     width: 74px;
   }
 .title{
+  color:black;
     width: 330px;
     box-sizing: border-box;
     overflow: hidden;

@@ -9,7 +9,7 @@ const ProdListCard=(
         const navigate = useNavigate();
 
         const deleteFunc=()=>{
-            axios.delete(`https://fine-puce-bison-cap.cyclic.app/makeup/${id}`).then((r)=>{
+            axios.delete(`https://wild-ruby-hermit-crab-tam.cyclic.app/makeup/${id}`).then((r)=>{
     
             }).catch((e)=>{console.log(e);})
         }

@@ -5,7 +5,9 @@
     padding: 1rem;
     
 }
-
+p{
+    color:black;
+}
 .prod_title{
     margin-top: 1rem;
     font-weight: 550;

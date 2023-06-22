@@ -25,7 +25,7 @@ export const CartItem = (props:any) => {
 }
 
   return (
-    <div>
+  <div>
       <Card
         direction={{ base: "column", sm: "row" }}
         overflow="hidden"
@@ -44,7 +44,7 @@ export const CartItem = (props:any) => {
           <HStack>
             <CardBody border={"0px"}>
               <Heading size="md">{brand}</Heading>
-              <Text py="2">
+              <Text py="2" color={"white"}>
                 {title}
               </Text>
             </CardBody>
@@ -57,7 +57,7 @@ export const CartItem = (props:any) => {
           <CardFooter border={'0px'} p={'2'}>
             <HStack border={"0px"} w={"100%"} justify={"space-between"}>
               <HStack>
-                <Text>Quantity:</Text>
+                <Text color={"white"}>Quantity:</Text>
                 <select name="pets" id="pet-select" onChange={(el)=>dispatch(quantityCart(index,el.target.value))}>
                   <option value="1">1</option>
                   <option value="2">2</option>

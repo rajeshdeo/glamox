@@ -31,13 +31,13 @@ const LoginAdmin=()=>{
 
             <div className={styles.inputBox}>
                 <div className={styles.imageInputBox}>
-                    <label>Username: </label>
-                    <input className={styles.input} type="text"  value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                    <label>Email: </label>
+                    <input className={styles.input} type="text" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 </div>
 
                 <div className={styles.imageInputBox}>
                     <label> Password: </label>
-                    <input className={styles.input} type="password" value={password} onChange={(e)=>setPass(e.target.value)}/>
+                    <input className={styles.input} type="password" value={password} placeholder="Password" onChange={(e)=>setPass(e.target.value)}/>
                 </div>
 
                 <div className={styles.sideAddButtonBox}>

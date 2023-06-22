@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Input } from "@chakra-ui/input";
+// import { Input } from "@chakra-ui/input";
 import { Box, Center, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/layout";
 import {
   Table,
@@ -172,7 +172,7 @@ export const CartDrawer = () => {
         p={"2"}
         borderRadius={"full"}
         onClick={onOpen}
-        _hover={{ cursor: "pointer", backgroundColor: "teal", color: "white" }}
+        _hover={{ cursor: "pointer", backgroundColor: "white", color: "black" }}
       >
         <Flex border={"0px"} w={"130%"}>
           <BsBag />
@@ -199,7 +199,7 @@ export const CartDrawer = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>Bag</DrawerHeader>
-          <hr />
+          {/* <hr /> */}
           <DrawerBody>
             {/* -------------------------Cart Items------------------------------------------ */}
             <VStack>
@@ -218,14 +218,15 @@ export const CartDrawer = () => {
             
             {cart.length!=0?
             <TableContainer
-              border={"1px solid grey"}
+              border={"1px solid white"}
               marginTop={5}
               borderRadius={"5"}
+              color={"green"}
             >
               <Table variant="simple" >
                 <Thead>
                   <Tr>
-                    <Th>Price Details</Th>
+                    <Th color={"red"} fontSize={"20px"}>Price Details</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
@@ -251,9 +252,9 @@ export const CartDrawer = () => {
               </Table>
             </TableContainer>
              :
-             <Center><Heading paddingTop={'40'}>Oops... <br/> Your bag is Empty</Heading></Center>    }
+             <Center><Heading paddingTop={'40'}>Oops...  Your bag is Empty</Heading></Center>    }
           </DrawerBody>
-          <hr />
+          {/* <hr /> */}
           <DrawerFooter>
             <HStack justifyContent={"space-between"} border={"0px"} w={"100%"}>
               <Heading size={"md"}>Total: ₹ {+state.total}</Heading>

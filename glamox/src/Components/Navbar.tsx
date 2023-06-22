@@ -97,7 +97,7 @@ export default function Navbar() {
             align={"center"}
             m={"auto"}
             justifyContent={"space-between"}
-            gap={"1"}
+            gap={"3"}
             border={"0px"}
             width={"60%"}
           >
@@ -105,25 +105,25 @@ export default function Navbar() {
             <NavbarDropdown />
             <Heading
               _hover={{ color: "pink.400", cursor: "pointer",fontFamily:"Inter" }}
-              size={"sm"}
+              size={"md"}
             >
               Brand
             </Heading>
             <Heading
               _hover={{ color: "pink.400", cursor: "pointer" }}
-              size={"sm"}
+              size={"md"}
             >
               Glamox Fashion
             </Heading>
             <Heading
               _hover={{ color: "pink.400", cursor: "pointer" }}
-              size={"sm"}
+              size={"md"}
             >
               Luxe
             </Heading>
             <Heading
               _hover={{ color: "pink.400", cursor: "pointer" }}
-              size={"sm"}
+              size={"md"}
             >
               Beauty Advice
             </Heading>

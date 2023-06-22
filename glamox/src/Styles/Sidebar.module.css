@@ -1,10 +1,11 @@
 .sidebar_div{
     height: 100vh;
     margin-top: 20px;
-    background-color: #ffe6ef;
+    background-color:white;
     width: 70%;
     padding: 20px;
     border-radius: 5px;
+    color: black;
 }
 
 .label{
@@ -17,6 +18,8 @@
     cursor: pointer;
     width: 20px;
     height: 20px;
+    color: green;
+    background-color: white;
 }
 
 .radio_btn{
@@ -25,6 +28,7 @@
     width: 20px;
     height: 20px;
     text-align: right;
+    background-color: white;
 }
 .radio_label{
     margin-left: 0.5rem;

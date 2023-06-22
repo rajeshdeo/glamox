@@ -13,15 +13,15 @@ const HomeAd = ()=>{
 
 
     const getFunc=()=>{
-        let res = axios.get('https://fine-puce-bison-cap.cyclic.app/makeup').then((r)=>{
+        let res = axios.get('https://wild-ruby-hermit-crab-tam.cyclic.app/makeup').then((r)=>{
             setData(r.data);
         }).catch((er)=>{})
 
-        let hairD = axios.get('https://fine-puce-bison-cap.cyclic.app/hair').then((r)=>{
+        let hairD = axios.get('https://wild-ruby-hermit-crab-tam.cyclic.app/hair').then((r)=>{
             setSkin(r.data);
         }).catch((er)=>{})
 
-        let skinD = axios.get('https://fine-puce-bison-cap.cyclic.app/skin').then((r)=>{
+        let skinD = axios.get('https://wild-ruby-hermit-crab-tam.cyclic.app/skin').then((r)=>{
             setHair(r.data);
         }).catch((er)=>{})
     }
@@ -48,7 +48,7 @@ const HomeAd = ()=>{
             <div className={styles.DashBox}>
                 <div className={styles.DashImgCont}>
                     <div className={styles.DashImgBox}>
-                        <h3>Active Offers</h3>
+                        <h2>Active Offers</h2>
                         <div className={styles.imgDiv}><img src="https://images-static.nykaa.com/uploads/2322f5eb-a8d4-4a4f-ad61-96648f3b6e96.jpg?tr=w-1200,cm-pad_resize" alt="offer" width={'100%'}/></div>
                         <div className={styles.imgDiv}><img src="https://images-static.nykaa.com/uploads/2322f5eb-a8d4-4a4f-ad61-96648f3b6e96.jpg?tr=w-1200,cm-pad_resize" alt="offer" width={'100%'}/></div>
                         <div className={styles.imgDiv}><img src="https://images-static.nykaa.com/uploads/2322f5eb-a8d4-4a4f-ad61-96648f3b6e96.jpg?tr=w-1200,cm-pad_resize" alt="offer" width={'100%'}/></div>
